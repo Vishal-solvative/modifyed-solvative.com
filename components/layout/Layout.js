@@ -1,63 +1,57 @@
-import {useEffect, useState} from 'react'
-import BackToTop from '../elements/BackToTop'
-import Footer from './Footer'
-import Header from './Header'
-import Sidebar from './Sidebar'
-import {client} from '../../tina/__generated__/client'
+"use client";
+import { useEffect, useState } from "react";
+import BackToTop from "../elements/BackToTop";
+import Footer from "./Footer";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import { useTina } from "tinacms/dist/react";
 
-const Layout = ({children, headerStyle, isFooterVisible = true, isHeaderVisible = true, data = []}) => {
-    const [openClass, setOpenClass] = useState('')
-    const [footerData, setFooterData] = useState(null)
-    const [headerData, setHeaderData] = useState(null)
-
-    useEffect(() => {
-        const loadFooterData = async () => {
-            try {
-                const response = await client.queries.global({
-                    relativePath: 'global.mdx'
-                })
-                setFooterData(response)
-                setHeaderData(response)
-            } catch (e) {
-                console.error('Error while fetching the footer content.', e)
-            }
-        }
-        loadFooterData()
-    }, [])
-    const handleOpen = () => {
-        if (document.body.classList.contains('mobile-menu-active')) {
-            document.body.classList.remove('mobile-menu-active')
-            setOpenClass('')
-        } else {
-            document.body.classList.add('mobile-menu-active')
-            setOpenClass('sidebar-visible')
-        }
+const Layout = (props) => {
+  const { children } = props;
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  });
+  const { global } = data;
+  const { footer, header } = global;
+  const [openClass, setOpenClass] = useState("");
+  const handleOpen = () => {
+    if (document.body.classList.contains("mobile-menu-active")) {
+      document.body.classList.remove("mobile-menu-active");
+      setOpenClass("");
+    } else {
+      document.body.classList.add("mobile-menu-active");
+      setOpenClass("sidebar-visible");
     }
+  };
 
-    const handleRemove = () => {
-        if (openClass === 'sidebar-visible') {
-            setOpenClass('')
-            document.body.classList.remove('mobile-menu-active')
-        }
+  const handleRemove = () => {
+    if (openClass === "sidebar-visible") {
+      setOpenClass("");
+      document.body.classList.remove("mobile-menu-active");
     }
-    return (
-        <>
-            <div className={openClass && 'body-overlay-1'} onClick={handleRemove} />
+  };
+  return (
+    <>
+      <div className={openClass && "body-overlay-1"} onClick={handleRemove} />
 
-            {isHeaderVisible && headerData && (
-                <>
-                    <Header handleOpen={handleOpen} headerStyle={headerStyle} headerData={headerData} />
-                    <Sidebar openClass={openClass} headerData={headerData} />
-                </>
-            )}
+      <>
+        <Header
+          handleOpen={handleOpen}
+          headerStyle={props.headerStyle}
+          header={header}
+        />
+        <Sidebar openClass={openClass} header={header} />
+      </>
 
-            <main className='main'>{children}</main>
+      <main className="main">{children}</main>
 
-            {isFooterVisible && footerData && <Footer {...footerData} />}
+      <Footer footer={footer} />
 
-            <BackToTop />
-        </>
-    )
-}
+      <BackToTop />
+    </>
+  );
+};
 
-export default Layout
+export default Layout;

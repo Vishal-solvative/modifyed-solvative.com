@@ -4,10 +4,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 import {useTina} from 'tinacms/dist/react'
 import {tinaField} from 'tinacms/dist/react'
 
-const Sidebar = ({openClass, headerData}) => {
-    const {data} = useTina(headerData)
-    const {global} = data
-    const {header} = global
+const Sidebar = ({header, openClass}) => {
 
     return (
         <>

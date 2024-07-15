@@ -1,17 +1,27 @@
 // app/layout.js
-import ClientLayout from './client-layout'
+import { client } from "../tina/__generated__/databaseClient";
+import Layout from "../components/layout/Layout";
 
 export const metadata = {
-    title: 'My App',
-    description: 'My Next.js 14 Application'
-}
+  title: "Solvative real",
+  description: "Solvative real is a IT solutions provider",
+};
 
-export default function RootLayout({children}) {
-    return (
-        <html lang='en'>
-            <body>
-                <ClientLayout>{children}</ClientLayout>
-            </body>
-        </html>
-    )
+export default async function RootLayout({ children }) {
+  const globalQuery = await client.queries.global({
+    relativePath: "global.mdx",
+  });
+  return (
+    <html lang="en">
+      <body>
+        <Layout
+          data={JSON.parse(JSON.stringify(globalQuery.data))}
+          query={globalQuery.query}
+          variables={globalQuery.variables}
+        >
+          {children}
+        </Layout>
+      </body>
+    </html>
+  );
 }
