@@ -1,0 +1,102 @@
+//1.FONT
+@font-face {
+    font-family: 'uicons-regular-rounded';
+    src: url('../fonts/uicons/uicons-regular-rounded.eot#iefix') format('embedded-opentype'),
+        url('../fonts/uicons/uicons-regular-rounded.woff2') format('woff2'),
+        url('../fonts/uicons/uicons-regular-rounded.woff') format('woff');
+}
+@import url(https://fonts.bunny.net/css?family=chivo:400,700|noto-sans:400,700);
+$font-heading: 'Noto Sans', sans-serif;
+$font-text: 'Chivo', sans-serif;
+$font-3xs: 10px;
+$font-xxs: 12px;
+$font-xs: 13px;
+$font-sm: 14px;
+$font-md: 16px;
+$font-md-2: 15px;
+$font-lg: 18px;
+$font-xl: 20px;
+$font-2xl: 22px;
+$font-3xl: 58px;
+
+//2.COLOR
+// New
+$color-gray-600: #475467;
+$color-gray-900: #101828;
+$color-green-900: #006d77;
+$color-green-500: #83c5be;
+$color-green-100: #afeae4;
+$color-orange-900: #e29578;
+$color-orange-500: #ffddd2;
+$color-orange-100: #faede3;
+$color-primary: #508fda;
+$color-secondary: #8d99ae;
+$color-success: #06d6a0;
+$color-danger: #ef476f;
+$color-warning: #ffd166;
+$color-info: #38a0c2;
+$color-white: #ffffff;
+$color-gray-50: #f9fafb;
+$color-gray-100: #f2f4f7;
+$color-gray-200: #e4e7ec;
+$color-gray-300: #d0d5dd;
+$color-gray-400: #98a2b3;
+$color-gray-500: #667085;
+$color-gray-600: #475467;
+$color-gray-700: #344054;
+$color-gray-800: #1d2939;
+$color-gray-900: #101828;
+$color-gray-1000: #1f2938;
+$color-gray-1100: #7e7e7e;
+$color-gray-1200: #9a9a9a;
+$color-gray: D1DAE4;
+// End New
+
+//3.Boxshadow
+// New
+$box-shadow-1: 14px 14px 36px rgba(153, 153, 153, 0.22);
+$box-shadow-2: 0px 45px 80px rgba(0, 0, 0, 0.04);
+$box-shadow-3: 0px 47px 65px rgba(21, 28, 38, 0.1);
+$box-shadow-4: 4px 6px 23px rgba(228, 92, 35, 0.1);
+$box-shadow-5: 4px 4px 40px rgba(16, 24, 40, 0.1);
+$box-shadow-inner: inset 0px 40px 80px #fcfcfc;
+// End new
+
+//4. Border
+$border-clor-1: #061224;
+$border-color-2: rgba(6, 18, 36, 0.1);
+//5. Background
+// New
+$background-white: #ffffff;
+$background-gray-100: #f2f4f7;
+$background-gray-900: #101828;
+$color-green-1000: #004b52;
+$background-gray-900-50: rgba(16, 24, 40, 0.5);
+$background-bg-1: #eae4e9;
+$background-bg-2: #fff3ea;
+$background-bg-2-1: #fff3eacc;
+$background-bg-3: #fde2e4;
+$background-bg-4: #fad2e1;
+$background-bg-5: #dbece5;
+$background-bg-6: #bee1e6;
+$background-bg-6-2: #bee1e64d;
+$background-bg-7: #f0efeb;
+$background-bg-8: #dfe7fd;
+$background-bg-9: #d1ecfd;
+$background-bg-10: #ddd3fa;
+$background-bg-11: rgba(11, 123, 63, 0.2);
+$background-bg-12: #158e99;
+// End new
+
+// 6. text-shadow
+$text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+// 7. breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    xsm: 450px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
