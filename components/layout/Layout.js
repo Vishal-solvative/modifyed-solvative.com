@@ -49,7 +49,7 @@ const Layout = (props) => {
 
       <Footer footer={footer} />
 
-      <BackToTop />
+      {/* <BackToTop /> */}
     </>
   );
 };

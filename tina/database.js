@@ -1,4 +1,3 @@
-
 import { createDatabase, createLocalDatabase } from '@tinacms/datalayer'
 import { GitHubProvider } from 'tinacms-gitprovider-github'
 import { MongodbLevel } from 'mongodb-level'

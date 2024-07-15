@@ -19,7 +19,6 @@ export default async function Index({ params }) {
       />
     );
   } catch (e) {
-    console.log("else running...");
     const _data = await client.queries.page({
       relativePath: `404.mdx`,
     });
@@ -31,11 +30,6 @@ export default async function Index({ params }) {
       />
     );
   }
-  // return <TinaPage slug={params.slug} />;
-
-  // const res = await client.queries.page({
-  //   relativePath: `${params.slug}.mdx`,
-  // });
 }
 
 export async function generateStaticParams() {
