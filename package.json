@@ -10,11 +10,13 @@
         "prepare": "husky"
     },
     "dependencies": {
+        "@tinacms/auth": "^1.0.5",
         "@tinacms/datalayer": "^1.2.36",
         "mongodb": "^6.8.0",
         "mongodb-level": "^0.0.4",
         "next": "^14.2.4",
         "next-auth": "^4.24.7",
+        "next-tinacms-cloudinary": "^5.0.6",
         "rc-slider": "^10.0.0",
         "react": "^18.3.1",
         "react-countup": "^6.2.0",
@@ -22,7 +24,7 @@
         "react-perfect-scrollbar": "^1.5.8",
         "react-visibility-sensor": "^5.1.1",
         "swiper": "^8.4.4",
-        "tinacms": "^1.6.4",
+        "tinacms": "^1.6.6",
         "tinacms-authjs": "^2.0.5",
         "tinacms-gitprovider-github": "^1.0.7",
         "wowjs": "^1.1.3"
