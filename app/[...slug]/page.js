@@ -5,6 +5,10 @@ import { client } from "../../tina/__generated__/databaseClient";
 export default async function Index({ params }) {
   let res = null;
   try {
+    if (params.slug == "404") {
+      throw new Error("404");
+    }
+
     res = await client.queries.page({
       relativePath: `${params.slug}.mdx`,
     });
