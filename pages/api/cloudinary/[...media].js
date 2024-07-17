@@ -16,6 +16,7 @@ export default createMediaHandler({
       if (process.env.NODE_ENV == "development") {
         return true;
       }
+      return true;
       // console.log("req :", req);
       // const user = await isAuthorized(req);
       // console.log("user : ", user);
