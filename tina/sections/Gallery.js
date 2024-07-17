@@ -1,81 +1,55 @@
-import {tinaField} from 'tinacms/dist/react'
+import { tinaField } from "tinacms/dist/react";
 
 const Gallery = {
-    props: {
-        label: 'Gallery',
-        name: 'Gallery',
-        ui: {
-            itemProps: item => {
-                return {label: item.sectionName}
-            }
-        },
-        fields: [
-            {
-                type: 'string',
-                name: 'sectionName',
-                label: 'Section Name'
-            },
-            {
-                type: 'object',
-                name: 'imageSection',
-                label: 'Image',
-                list: true,
-                templates: [
-                    {
-                        label: 'image',
-                        name: 'image',
-                        ui: {
-                            itemProps: item => {
-                                return {label: item.alt}
-                            }
-                        },
-                        fields: [
-                            {
-                                type: 'image',
-                                name: 'image',
-                                label: 'Image'
-                            },
-                            {
-                                name: 'alt',
-                                label: 'Alt Text',
-                                component: 'text',
-                                type: 'string'
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+  props: {
+    label: "Gallery",
+    name: "Gallery",
+    ui: {
+      itemProps: (item) => {
+        return { label: item.sectionName };
+      },
     },
+    fields: [
+      {
+        type: "string",
+        name: "sectionName",
+        label: "Section Name",
+      },
+      {
+        type: "image",
+        name: "image1",
+        label: "Image 1",
+      },
+      {
+        type: "image",
+        name: "image2",
+        label: "Image 2",
+      },
+    ],
+  },
 
-    template: fields => (
-        <div className='section-box mt-100'>
-            {fields?.imageSection && (
-                <div className='container'>
-                    <div className='row'>
-                        {fields?.imageSection[0] && (
-                            <div className='col-lg-7'>
-                                <img
-                                    src={fields?.imageSection[0]?.image}
-                                    alt={fields?.imageSection[0]?.alt}
-                                    data-tina-field={tinaField(fields?.imageSection[0], 'alt')}
-                                />
-                            </div>
-                        )}
-                        {fields?.imageSection[1] && (
-                            <div className='col-lg-5'>
-                                <img
-                                    src={fields?.imageSection[1]?.image}
-                                    alt={fields?.imageSection[1]?.alt}
-                                    data-tina-field={tinaField(fields?.imageSection[1], 'alt')}
-                                />
-                            </div>
-                        )}
-                    </div>
-                </div>
-            )}
+  template: (fields) => (
+    <div className="section-box mt-100">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-7">
+            <img
+              src={fields?.image1}
+              alt="solvative"
+              data-tina-field={tinaField(fields, "image1")}
+            />
+          </div>
+          <div className="col-lg-5">
+            <img
+              src={fields?.image2}
+              alt="solvative"
+              data-tina-field={tinaField(fields, "image2")}
+            />
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  ),
+};
 
-export default Gallery
+export default Gallery;
