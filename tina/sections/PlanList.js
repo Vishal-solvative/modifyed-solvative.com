@@ -81,7 +81,12 @@ const PlanListComponent = ({ fields }) => {
                       </div>
                       <ul className="list-package-feature">
                         {plan?.features?.map((feature, index) => (
-                          <li key={index}>{feature?.title}</li>
+                          <li
+                            key={index}
+                            data-tina-field={tinaField(feature, "title")}
+                          >
+                            {feature?.title}
+                          </li>
                         ))}
                       </ul>
                       <div>
@@ -184,23 +189,12 @@ const PlanList = {
             name: "features",
             label: "Features",
             list: true,
-            templates: [
+            fields: [
               {
-                label: "Feature",
-                name: "feature",
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item.title };
-                  },
-                },
-                fields: [
-                  {
-                    type: "string",
-                    name: "title",
-                    label: "Feature title",
-                    required: true,
-                  },
-                ],
+                type: "string",
+                name: "title",
+                label: "Feature title",
+                required: true,
               },
             ],
           },
