@@ -1,7 +1,6 @@
 import TinaComp from "../../components/TinaComp";
 import TinaPage from "../../components/TinaPage";
 import { client } from "../../tina/__generated__/databaseClient";
-export const runtime = 'edge';
 export default async function Index({ params }) {
   let res = null;
   try {
