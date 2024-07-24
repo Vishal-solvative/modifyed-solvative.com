@@ -4,7 +4,6 @@ import {
 } from "next-tinacms-cloudinary/dist/handlers";
 // No need to import 'isAuthorized' since we are not using it
 // import { isAuthorized } from "@tinacms/auth";
-export const runtime = 'edge';
 
 export const config = mediaHandlerConfig;
 
