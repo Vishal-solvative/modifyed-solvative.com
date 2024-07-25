@@ -9,6 +9,7 @@ const ServiceHeader1 = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/service-header-1.png",
     },
     fields: [
       {

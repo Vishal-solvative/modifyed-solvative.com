@@ -11,6 +11,7 @@ const Categories = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/categories.png",
     },
     fields: [
       {

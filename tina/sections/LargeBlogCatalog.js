@@ -9,6 +9,7 @@ const LargeBlogCatalog = {
       itemProps: (item) => {
         return { label: item.title };
       },
+      previewSrc: "/thumbnails/large-blog.png",
     },
     fields: [
       {

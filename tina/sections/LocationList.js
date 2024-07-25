@@ -8,6 +8,7 @@ const LocationList = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/location-list.png",
     },
     fields: [
       {

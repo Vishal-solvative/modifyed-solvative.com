@@ -14,6 +14,7 @@ const BlogCarousel = {
       itemProps: (item) => {
         return { label: item.title };
       },
+      previewSrc: "/thumbnails/blog-carousel.png",
     },
     fields: [
       {

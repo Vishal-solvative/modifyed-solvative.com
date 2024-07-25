@@ -10,6 +10,7 @@ const ServiceHeader2 = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/service-header-2.png",
     },
     fields: [
       {

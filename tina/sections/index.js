@@ -1,10 +1,8 @@
 import WelcomeHero from "./WelcomeHero";
-import ImageContainer from "./ImageContainer";
 import Blog from "./Blog";
 import Categories from "./Categories";
 import Clients from "./Clients";
 import Gallery from "./Gallery";
-import GetStarted from "./GetStarted";
 import OurProcess from "./OurProcess";
 import ClientTestimony from "./clientTestimony";
 import NewsLetter from "./NewsLetter";
@@ -32,14 +30,12 @@ import BlogBody from "./BlogBody";
 import CareerDetails from "./CareerDetails";
 export default {
   WelcomeHero,
-  ImageContainer,
   Blog,
   Categories,
   Clients,
   ClientTestimony,
   OurProcess,
   Gallery,
-  GetStarted,
   NewsLetter,
   FeatureShort,
   OurProcess,

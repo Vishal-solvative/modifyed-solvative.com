@@ -10,6 +10,7 @@ const ClientTestimony = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/client-testimony.png",
     },
     fields: [
       {
