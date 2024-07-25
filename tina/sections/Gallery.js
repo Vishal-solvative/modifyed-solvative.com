@@ -8,6 +8,7 @@ const Gallery = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/image-container.png",
     },
     fields: [
       {

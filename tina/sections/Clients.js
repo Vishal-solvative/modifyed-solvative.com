@@ -8,6 +8,7 @@ const Clients = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/clients.png",
     },
     fields: [
       {

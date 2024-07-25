@@ -8,6 +8,7 @@ const OurProcess = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/progress-stats.png",
     },
     fields: [
       {

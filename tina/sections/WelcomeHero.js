@@ -10,6 +10,7 @@ const WelcomeHero = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/welcome-hero.png",
     },
     fields: [
       {

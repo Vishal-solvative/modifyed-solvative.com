@@ -9,6 +9,7 @@ const FeatureShort = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/features-short.png",
     },
     fields: [
       {

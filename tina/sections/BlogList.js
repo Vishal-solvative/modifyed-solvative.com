@@ -10,6 +10,7 @@ const BlogList = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/blog-list.png",
     },
     fields: [
       {

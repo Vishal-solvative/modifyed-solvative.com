@@ -10,6 +10,7 @@ const Partners = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/partners.png",
     },
     fields: [
       {

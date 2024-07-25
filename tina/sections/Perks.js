@@ -9,6 +9,7 @@ const Perks = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/perks.png",
     },
     fields: [
       {
