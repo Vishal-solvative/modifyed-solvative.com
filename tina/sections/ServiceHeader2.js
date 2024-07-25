@@ -10,6 +10,7 @@ const ServiceHeader2 = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/service-header-2.png",
     },
     fields: [
       {
@@ -75,16 +76,18 @@ const ServiceHeader2 = {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
-              <TinaMarkdown
-                data-tina-field={tinaField(fields, "primary_heading")}
-                content={fields?.primary_heading}
-                components={{
-                  h1: (props) => <h1 className="text-display-2" {...props} />,
-                  bold: (props) => (
-                    <span className="color-green-900" {...props} />
-                  ),
-                }}
-              />
+              <div data-tina-field={tinaField(fields, "primary_heading")}>
+                <TinaMarkdown
+                  content={fields?.primary_heading}
+                  components={{
+                    h1: (props) => <h1 className="text-display-2" {...props} />,
+                    bold: (props) => (
+                      <span className="color-green-900" {...props} />
+                    ),
+                  }}
+                />
+              </div>
+
               <p
                 className="text-body-lead-large color-gray-500 mt-40 pr-40"
                 data-tina-field={tinaField(fields, "heading2")}

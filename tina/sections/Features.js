@@ -8,6 +8,7 @@ const Features = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/features.png",
     },
     fields: [
       {

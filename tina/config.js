@@ -80,9 +80,9 @@ export default defineConfig({
             name: "section",
             label: "Section",
             list: true,
-            // ui: {
-            //     visualSelector: true
-            // },
+            ui: {
+              visualSelector: true,
+            },
             templates: Object.values(sections).map((e) => e.props),
           },
         ],

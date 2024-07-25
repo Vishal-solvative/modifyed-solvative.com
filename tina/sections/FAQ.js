@@ -110,6 +110,7 @@ const FAQ = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/faq.png",
     },
     fields: [
       {

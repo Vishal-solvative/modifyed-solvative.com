@@ -118,6 +118,7 @@ const PlanList = {
       itemProps: (item) => {
         return { label: item.sectionName };
       },
+      previewSrc: "/thumbnails/plan-list.png",
     },
     fields: [
       {
