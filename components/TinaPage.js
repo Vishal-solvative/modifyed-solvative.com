@@ -19,9 +19,6 @@ const TinaContent = (Props) => {
   const { page } = data;
   const { section } = page;
 
-  console.log("data:" + data);
-  console.log("tina page:" + section);
-
   const isFooterVisible = !!page.isFooterVisible;
   const isHeaderVisible = !!page.isHeaderVisible;
 
