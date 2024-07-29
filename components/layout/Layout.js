@@ -16,7 +16,11 @@ const Layout = (props) => {
   const { global } = data;
   const { footer, header } = global;
 
-  const [activePage, setActivePage] = useState(window.location.pathname);
+  const [activePage, setActivePage] = useState("");
+
+  useEffect(() => {
+    setActivePage(window.location.pathname);
+  }, []);
 
   const [openClass, setOpenClass] = useState("");
 

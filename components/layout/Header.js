@@ -19,14 +19,16 @@ const Header = ({
           <div className="main-header">
             <div className="header-left">
               <div className="header-logo">
-                <Link href="/" legacyBehavior>
-                  <a className="d-flex">
-                    <img
-                      alt="Agon"
-                      src={header?.logo}
-                      data-tina-field={tinaField(header, "logo")}
-                    />
-                  </a>
+                <Link
+                  className="d-flex"
+                  href="/"
+                  onClick={() => setActivePage("/")}
+                >
+                  <img
+                    alt="Agon"
+                    src={header?.logo}
+                    data-tina-field={tinaField(header, "logo")}
+                  />
                 </Link>
               </div>
               <div className="header-nav">
