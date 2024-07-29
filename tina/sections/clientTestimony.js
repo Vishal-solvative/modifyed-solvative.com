@@ -113,7 +113,7 @@ const ClientTestimony = {
             <div className="row">
               {fields?.authors?.map((auth, inx) => (
                 <div className="col-lg-6 col-md-12 col-sm-12" key={inx}>
-                  <div className="card-grid-style-2 card-square hover-up mb-20">
+                  <div className="card-grid-style-2 card-square mb-20">
                     <p
                       className="text-body-text color-gray-600 text-comment"
                       data-tina-field={tinaField(auth, "quote")}

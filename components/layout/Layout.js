@@ -15,7 +15,15 @@ const Layout = (props) => {
   });
   const { global } = data;
   const { footer, header } = global;
+
+  const [activePage, setActivePage] = useState("");
+
+  useEffect(() => {
+    setActivePage(window.location.pathname);
+  }, []);
+
   const [openClass, setOpenClass] = useState("");
+
   const handleOpen = () => {
     if (document.body.classList.contains("mobile-menu-active")) {
       document.body.classList.remove("mobile-menu-active");
@@ -32,6 +40,7 @@ const Layout = (props) => {
       document.body.classList.remove("mobile-menu-active");
     }
   };
+
   return (
     <>
       <div className={openClass && "body-overlay-1"} onClick={handleRemove} />
@@ -41,8 +50,15 @@ const Layout = (props) => {
           handleOpen={handleOpen}
           headerStyle={props.headerStyle}
           header={header}
+          activePage={activePage}
+          setActivePage={setActivePage}
         />
-        <Sidebar openClass={openClass} header={header} />
+        <Sidebar
+          openClass={openClass}
+          header={header}
+          activePage={activePage}
+          setActivePage={setActivePage}
+        />
       </>
 
       <main className="main">{children}</main>
