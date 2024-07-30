@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTina } from "tinacms/dist/react";
 import RenderSections from "../tina/RenderSections";
 export const TINA_DEFAULT_PAGES = {
@@ -18,18 +18,18 @@ const TinaComp = (props) => {
   const isFooterVisible = !!page.isFooterVisible;
   const isHeaderVisible = !!page.isHeaderVisible;
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const WOW = require("wowjs");
-  //     new WOW.WOW({
-  //       boxClass: "wow",
-  //       animateClass: "animated",
-  //       offset: 0,
-  //       mobile: true,
-  //       live: true,
-  //     }).init();
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const WOW = require("wowjs");
+      new WOW.WOW({
+        boxClass: "wow",
+        animateClass: "animated",
+        offset: 0,
+        mobile: true,
+        live: true,
+      }).init();
+    }
+  }, []);
 
   return <RenderSections sections={section} />;
 };

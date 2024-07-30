@@ -26,7 +26,7 @@ const BlogHeader = {
     ],
   },
   template: (fields) => (
-    <section className="section-box ">
+    <section className="section-box wow slideInUp  ">
       <div
         className="banner-hero banner-head-image"
         data-tina-field={tinaField(fields, "bgImage")}

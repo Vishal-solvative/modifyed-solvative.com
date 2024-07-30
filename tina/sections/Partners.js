@@ -51,7 +51,7 @@ const Partners = {
   },
 
   template: (fields) => (
-    <section className="section-box overflow-visible mt-70 ">
+    <section className="section-box wow slideInUp  overflow-visible mt-70 ">
       <div className="container">
         <h2
           className="text-heading-3 text-center color-gray-900 mb-60"

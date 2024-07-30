@@ -18,7 +18,7 @@ const Ideas2 = {
     const [firstDesc, secondDesc] = splitText(fields?.subHeading);
 
     return (
-      <section className="section-box mt-100 ">
+      <section className="section-box wow slideInUp  mt-100 ">
         <div className="container">
           <div className="row">
             <div className="col-lg-1 col-sm-1 col-12" />

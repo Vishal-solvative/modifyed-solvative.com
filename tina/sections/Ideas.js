@@ -9,7 +9,7 @@ const Ideas = {
   },
 
   template: (fields) => (
-    <section className="section-box mt-100 ">
+    <section className="section-box wow slideInUp  mt-100 ">
       <div className="container">
         <div className="row">
           <div className="col-lg-12 col-sm-12 col-12">
