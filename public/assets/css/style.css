@@ -9510,4 +9510,5 @@ input.qty-val {
 .btn-play-video:hover {
   background-image: url(../imgs/template/icons/play-button-black.svg) !important;
   cursor: pointer;
+  
 }
