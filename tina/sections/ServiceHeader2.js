@@ -71,11 +71,11 @@ const ServiceHeader2 = {
     ],
   },
   template: (fields) => (
-    <section className="section-box wow slideInUp  ">
+    <section className="section-box">
       <div className="banner-hero bg-service-2">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12 text-center">
+            <div className="col-lg-12 text-center wow slideInUp">
               <div data-tina-field={tinaField(fields, "primary_heading")}>
                 <TinaMarkdown
                   content={fields?.primary_heading}
