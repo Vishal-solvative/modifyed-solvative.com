@@ -20,7 +20,6 @@ const TinaComp = (props) => {
   const isHeaderVisible = !!page.isHeaderVisible;
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
       const WOW = require("wowjs");
       new WOW.WOW({
         boxClass: "wow",
@@ -29,7 +28,6 @@ const TinaComp = (props) => {
         mobile: true,
         live: true,
       }).init();
-    }
   }, []);
 
   return <RenderSections sections={section} />;
