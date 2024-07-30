@@ -2541,6 +2541,7 @@ label {
   border-radius: 8px;
 }
 .card-list-style-1 .style-1-img::before {
+<<<<<<< HEAD
   content: "";
   position: absolute;
   bottom: 5px;
@@ -2555,6 +2556,18 @@ label {
   z-index: -1;
 >>>>>>> 1cc53af2d1c7d8d81c24269a6e41db568786bca0
   transition-duration: 0.2s;
+=======
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: -5px;
+    width: calc(100% - 10px);
+    border-radius: 8px;
+    background-color: #d1ecfd;
+    top: 10px;
+    z-index: 1;
+    transition-duration: 0.2s;
+>>>>>>> 1ab5d5bb5085d941b6c2b9c6c6fe898321789dc2
 }
 .card-list-style-1 .style-1-img.color-bg-4::before {
   background-color: #fad2e1;
@@ -3477,6 +3490,7 @@ label {
 }
 .shape-1 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   animation: hero-thumb-animation 2s linear infinite alternate;
 }
 
@@ -3497,6 +3511,17 @@ label {
 .shape-3 {
   animation: hero-thumb-sm-2-animation 4s linear alternate;
 >>>>>>> 1cc53af2d1c7d8d81c24269a6e41db568786bca0
+=======
+    animation: hero-thumb-animation 2s linear infinite alternate;
+}
+
+.shape-2 {
+    animation: hero-thumb-sm-animation 4s linear infinite alternate;
+}
+
+.shape-3 {
+    animation: hero-thumb-sm-2-animation 4s linear infinite alternate;
+>>>>>>> 1ab5d5bb5085d941b6c2b9c6c6fe898321789dc2
 }
 
 .header {
