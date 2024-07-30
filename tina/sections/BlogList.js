@@ -82,10 +82,10 @@ const BlogList = {
       <div className="container mt-90">
         <div className="row">
           {fields?.blogList?.map((blog, index) => (
-            <div key={index} class="col-lg-4 col-sm-12 pr-30">
-              <div class="card-grid-style-4">
+            <div key={index} className="col-lg-4 col-sm-12 pr-30">
+              <div className="card-grid-style-4">
                 <span
-                  class="tag-dot"
+                  className="tag-dot"
                   data-tina-field={tinaField(blog?.blog, "blogTag")}
                 >
                   {blog?.blog?.blogTag}
