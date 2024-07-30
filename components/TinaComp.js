@@ -2,7 +2,6 @@
 import React from "react";
 import { useTina } from "tinacms/dist/react";
 import RenderSections from "../tina/RenderSections";
-import WOW from "wowjs";
 export const TINA_DEFAULT_PAGES = {
   HOME: "home",
   404: "404.mdx",
