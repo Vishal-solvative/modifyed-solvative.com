@@ -2549,7 +2549,11 @@ label {
   border-radius: 8px;
   background-color: #d1ecfd;
   top: 10px;
+<<<<<<< HEAD
   z-index: 1;
+=======
+  z-index: -1;
+>>>>>>> 1cc53af2d1c7d8d81c24269a6e41db568786bca0
   transition-duration: 0.2s;
 }
 .card-list-style-1 .style-1-img.color-bg-4::before {
@@ -3472,6 +3476,7 @@ label {
   }
 }
 .shape-1 {
+<<<<<<< HEAD
   animation: hero-thumb-animation 2s linear infinite alternate;
 }
 
@@ -3481,6 +3486,17 @@ label {
 
 .shape-3 {
   animation: hero-thumb-sm-2-animation 4s linear infinite alternate;
+=======
+  animation: hero-thumb-animation 2s linear alternate;
+}
+
+.shape-2 {
+  animation: hero-thumb-sm-animation 4s linear alternate;
+}
+
+.shape-3 {
+  animation: hero-thumb-sm-2-animation 4s linear alternate;
+>>>>>>> 1cc53af2d1c7d8d81c24269a6e41db568786bca0
 }
 
 .header {
@@ -9489,3 +9505,25 @@ input.qty-val {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+.btn-link:hover {
+  color: #006d77 !important;
+}
+
+.form-control:hover {
+  transition-duration: 0.2s;
+  border: solid #006d77;
+}
+
+.active {
+  color: #006d77;
+}
+
+.btn-send:hover {
+  background-image: url(../imgs/template/icons/btn-send-black.svg) !important;
+}
+
+.btn-play-video:hover {
+  background-image: url(../imgs/template/icons/play-button-black.svg) !important;
+  cursor: pointer;
+}
