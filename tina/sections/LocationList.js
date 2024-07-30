@@ -67,7 +67,7 @@ const LocationList = {
     ],
   },
   template: (fields) => (
-    <section className="section-box mt-100 wow slideInUp">
+    <section className="section-box mt-100 ">
       <div className="container">
         <div className="row">
           <div className="col-lg-12 col-sm-10 col-12 text-center mt-40">

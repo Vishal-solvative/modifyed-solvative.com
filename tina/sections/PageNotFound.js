@@ -54,7 +54,7 @@ const pageNotFound = {
   },
 
   template: (fields) => (
-    <section className="section-box wow slideInUp">
+    <section className="section-box ">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">

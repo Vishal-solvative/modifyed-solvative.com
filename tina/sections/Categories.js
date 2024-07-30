@@ -76,7 +76,7 @@ const Categories = {
   },
 
   template: (fields) => (
-    <div className="section-box mt-140 wow slideInUp">
+    <div className="section-box mt-140 ">
       <div className="container text-center">
         <h2
           className="text-heading-1 color-gray-900"

@@ -72,7 +72,7 @@ const ClientTestimony = {
   },
 
   template: (fields) => (
-    <div className="section-box pt-100 pb-100 mt-100 bg-6 wow slideInUp">
+    <div className="section-box pt-100 pb-100 mt-100 bg-6 ">
       <div className="container">
         <div className="row">
           <div className="col-lg-5 mb-30">

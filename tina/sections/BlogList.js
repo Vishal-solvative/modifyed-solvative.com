@@ -48,7 +48,7 @@ const BlogList = {
     ],
   },
   template: (fields) => (
-    <section className="section-box wow slideInUp">
+    <section className="section-box ">
       <div className="container mt-30">
         <div className="row">
           <div className="col-lg-8">
