@@ -19,16 +19,18 @@ const TinaComp = (props) => {
   const isFooterVisible = !!page.isFooterVisible;
   const isHeaderVisible = !!page.isHeaderVisible;
 
-  useEffect(() => {
-      const WOW = require("wowjs");
-      new WOW.WOW({
-        boxClass: "wow",
-        animateClass: "animated",
-        offset: 0,
-        mobile: true,
-        live: true,
-      }).init();
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const WOW = require("wowjs");
+  //     new WOW.WOW({
+  //       boxClass: "wow",
+  //       animateClass: "animated",
+  //       offset: 0,
+  //       mobile: true,
+  //       live: true,
+  //     }).init();
+  //   }
+  // }, []);
 
   return <RenderSections sections={section} />;
 };
