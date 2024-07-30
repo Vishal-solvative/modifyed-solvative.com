@@ -62,7 +62,7 @@ const Features = {
     ],
   },
   template: (fields) => (
-    <section className="section-box">
+    <section className="section-box wow slideInUp">
       <div className="container mt-120">
         <div className="row">
           <div className="col-lg-6 col-sm-12 block-img-we-do">

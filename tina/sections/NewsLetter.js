@@ -50,7 +50,7 @@ const NewsLetter = {
     ],
   },
   template: (fields) => (
-    <div className="section-box overflow-visible mb-50">
+    <div className="section-box overflow-visible mb-50 wow slideInUp">
       <div className="container mt-100">
         <div className="row">
           <div className="col-lg-1"></div>

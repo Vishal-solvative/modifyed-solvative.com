@@ -56,7 +56,7 @@ const FeatureShort = {
     ],
   },
   template: (fields) => (
-    <section className="section-box mt-90 mb-mobile mb-150">
+    <section className="section-box mt-90 mb-mobile mb-150 wow slideInUp">
       <div className="container">
         <div className="row">
           <div className="col-lg-2 col-sm-1 col-12"></div>

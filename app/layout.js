@@ -16,6 +16,10 @@ export default async function RootLayout({ children }) {
   });
   return (
     <html lang="en">
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css"
+      />
       <body>
         <Layout
           data={JSON.parse(JSON.stringify(globalQuery.data))}

@@ -32,7 +32,7 @@ const ContactUsHeading = {
     ],
   },
   template: (fields) => (
-    <section className="section-box">
+    <section className="section-box wow slideInUp">
       <div className="banner-hero banner-breadcrums">
         <div className="container text-center">
           <h1

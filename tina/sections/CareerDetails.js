@@ -97,7 +97,7 @@ const CareerDetails = {
     ],
   },
   template: (fields) => (
-    <section class="section-box mt-50 mb-50">
+    <section class="section-box mt-50 mb-50 wow slideInUp">
       <div class="container" data-tina-field={tinaField(fields, "career")}>
         <div class="content-detail">
           <div class="row">
