@@ -5,51 +5,51 @@ import { useState, useEffect } from "react";
 import { fetchPages } from "../../util/pagesData";
 import { useTina } from "tinacms/dist/react";
 import { tinaField } from "tinacms/dist/react";
-const Header = ({ header, headerStyle = false , handleOpen}) => {
-  const [scroll, setScroll] = useState(0);
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      const scrollCheck = window.scrollY > 100;
-      if (scrollCheck !== scroll) {
-        setScroll(scrollCheck);
-      }
-    });
-  });
-
+const Header = ({
+  header,
+  headerStyle = false,
+  handleOpen,
+  activePage,
+  setActivePage,
+}) => {
   return (
     <>
-      <header
-        className={
-          scroll
-            ? `${headerStyle} header sticky-bar stick `
-            : `${headerStyle} header sticky-bar`
-        }
-      >
+      <header className="header sticky-bar">
         <div className="container">
           <div className="main-header">
             <div className="header-left">
               <div className="header-logo">
-                <Link href="/" legacyBehavior>
-                  <a className="d-flex">
-                    <img
-                      alt="Agon"
-                      src={header?.logo}
-                      data-tina-field={tinaField(header, "logo")}
-                    />
-                  </a>
+                <Link
+                  className="d-flex"
+                  href="/"
+                  onClick={() => setActivePage("/")}
+                >
+                  <img
+                    alt="Agon"
+                    src={header?.logo}
+                    data-tina-field={tinaField(header, "logo")}
+                  />
                 </Link>
               </div>
               <div className="header-nav">
                 <nav className="nav-main-menu d-none d-xl-block">
                   <ul className="main-menu">
                     {header?.navLinks?.map((navLink, index) => (
-                      <li key={index}>
+                      <li
+                        key={index}
+                        onClick={() => setActivePage(navLink?.link)}
+                      >
                         <Link
                           href={navLink?.link}
-                          legacyBehavior
                           data-tina-field={tinaField(navLink, "link")}
                         >
-                          {navLink?.title}
+                          <p
+                            className={
+                              activePage == navLink?.link ? "active" : ""
+                            }
+                          >
+                            {navLink?.title}
+                          </p>
                         </Link>
                       </li>
                     ))}

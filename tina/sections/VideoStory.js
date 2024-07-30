@@ -30,9 +30,9 @@ const VideoStoryComponent = ({ fields }) => {
                 ) : null}
                 <h1
                   className={
-                    `${fields?.tag}`
-                      ? `text-display-2 color-gray-900 mt-30`
-                      : `text-display-2 color-gray-900`
+                    fields?.tag
+                      ? "text-display-2 color-gray-900 mt-30"
+                      : "text-display-2 color-gray-900"
                   }
                   data-tina-field={tinaField(fields, "primaryHeading")}
                 >

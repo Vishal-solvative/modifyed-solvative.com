@@ -1,17 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from 'next/link'
-import 'react-perfect-scrollbar/dist/css/styles.css'
-import {useTina} from 'tinacms/dist/react'
-import {tinaField} from 'tinacms/dist/react'
+import Link from "next/link";
+import "react-perfect-scrollbar/dist/css/styles.css";
+import { useTina } from "tinacms/dist/react";
+import { tinaField } from "tinacms/dist/react";
 
-const Sidebar = ({header, openClass}) => {
-
-    return (
-        <>
-            <div className={`mobile-header-active mobile-header-wrapper-style perfect-scrollbar ${openClass}`}>
-                <div className='mobile-header-wrapper-inner'>
-                    {/* Commenting top user account if needed we can uncomment and use */}
-                    {/* <div className='mobile-header-top'>
+const Sidebar = ({ header, openClass, activePage, setActivePage }) => {
+  return (
+    <>
+      <div
+        className={`mobile-header-active mobile-header-wrapper-style perfect-scrollbar ${openClass}`}
+      >
+        <div className="mobile-header-wrapper-inner">
+          {/* Commenting top user account if needed we can uncomment and use */}
+          {/* <div className='mobile-header-top'>
                         <div className='user-account'>
                             <img src='/assets/imgs/template/ava_1.png' alt='Agon' />
                             <div className='content'>
@@ -22,27 +23,35 @@ const Sidebar = ({header, openClass}) => {
                             </div>
                         </div>
                     </div> */}
-                    <div className='mobile-header-content-area'>
-                        <div className='perfect-scroll'>
-                            <div className='mobile-menu-wrap mobile-header-border'>
-                                <nav>
-                                    <ul className='mobile-menu font-heading'>
-                                        {header?.navLinks?.map((navLink, index) => (
-                                            <li key={index}>
-                                                <Link
-                                                    href={navLink?.link}
-                                                    legacyBehavior
-                                                    data-tina-field={tinaField(navLink, 'link')}
-                                                >
-                                                    {navLink?.title}
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </nav>
-                            </div>
-                            {/* Commenting user account nav links if needed we can uncomment and use */}
-                            {/* <div className='mobile-account'>
+          <div className="mobile-header-content-area">
+            <div className="perfect-scroll">
+              <div className="mobile-menu-wrap mobile-header-border">
+                <nav>
+                  <ul className="mobile-menu font-heading">
+                    {header?.navLinks?.map((navLink, index) => (
+                      <li
+                        key={index}
+                        onClick={() => setActivePage(navLink?.link)}
+                      >
+                        <Link
+                          href={navLink?.link}
+                          data-tina-field={tinaField(navLink, "link")}
+                        >
+                          <p
+                            className={
+                              activePage == navLink?.link ? "active" : ""
+                            }
+                          >
+                            {navLink?.title}
+                          </p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </div>
+              {/* Commenting user account nav links if needed we can uncomment and use */}
+              {/* <div className='mobile-account'>
                                 <h6 className='mb-10'>Your Account</h6>
                                 <ul className='mobile-menu font-heading'>
                                     <li>
@@ -82,20 +91,20 @@ const Sidebar = ({header, openClass}) => {
                                     </li>
                                 </ul>
                             </div> */}
-                            <div className='site-copyright color-gray-400'>
-                                Copyright 2022 © Agon - Agency Template.
-                                <br />
-                                Designed by
-                                <Link href='http://alithemes.com' legacyBehavior>
-                                    <a>&nbsp; AliThemes</a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div className="site-copyright color-gray-400">
+                Copyright 2022 © Agon - Agency Template.
+                <br />
+                Designed by
+                <Link href="http://alithemes.com" legacyBehavior>
+                  <a>&nbsp; AliThemes</a>
+                </Link>
+              </div>
             </div>
-        </>
-    )
-}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default Sidebar
+export default Sidebar;
