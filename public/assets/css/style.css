@@ -1526,7 +1526,7 @@ textarea.form-control {
   font-size: 14px;
   line-height: 20px;
   width: 100%;
-  border-radius: 0px;
+  border-radius: 4px;
   color: #98a2b3;
 }
 textarea.form-control:focus {
@@ -1550,7 +1550,7 @@ textarea.form-control.form-icons {
   font-size: 14px;
   line-height: 20px;
   width: 100%;
-  border-radius: 0px;
+  border-radius: 4px;
 }
 .form-group input:focus {
   background: #ffffff;
