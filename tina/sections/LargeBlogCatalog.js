@@ -51,7 +51,7 @@ const LargeBlogCatalog = {
 
   template: (fields) => {
     return (
-      <section className="section-box">
+      <section className="section-box wow slideInUp">
         <div className="container mt-30">
           <div className="row">
             <div className="col-lg-1 col-sm-1 col-12" />

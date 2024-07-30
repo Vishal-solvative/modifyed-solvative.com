@@ -30,7 +30,7 @@ const Gallery = {
   },
 
   template: (fields) => (
-    <div className="section-box mt-100">
+    <div className="section-box mt-100 wow slideInUp">
       <div className="container">
         <div className="row">
           <div className="col-lg-7">

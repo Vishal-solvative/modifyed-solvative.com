@@ -65,7 +65,7 @@ const OurProcess = {
     ],
   },
   template: (fields) => (
-    <div className="section-box">
+    <div className="section-box wow slideInUp">
       <div className="container mt-120">
         <div className="row">
           <div className="col-lg-6 col-md-12 col-sm-12 block-img-we-do text-center">
