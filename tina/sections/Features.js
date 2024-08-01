@@ -67,7 +67,7 @@ const Features = {
         <div className="row">
           <div className="col-lg-6 col-sm-12 block-img-we-do">
             <img
-              className="bdrd-16 img-responsive"
+              className="bdrd-16 img-responsive main-img"
               src={fields?.image}
               alt="Agon"
               data-tina-field={tinaField(fields, "image")}
