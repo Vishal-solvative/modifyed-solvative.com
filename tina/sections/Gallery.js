@@ -30,13 +30,14 @@ const Gallery = {
   },
 
   template: (fields) => (
-    <div className="section-box wow slideInUp  mt-100 ">
+    <div className="section-box wow slideInUp mt-100">
       <div className="container">
         <div className="row">
           <div className="col-lg-7">
             <img
               src={fields?.image1}
               alt="solvative"
+              className="main-img"
               data-tina-field={tinaField(fields, "image1")}
             />
           </div>
@@ -44,6 +45,7 @@ const Gallery = {
             <img
               src={fields?.image2}
               alt="solvative"
+              className="main-img"
               data-tina-field={tinaField(fields, "image2")}
             />
           </div>

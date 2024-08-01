@@ -2541,16 +2541,16 @@ label {
   border-radius: 8px;
 }
 .card-list-style-1 .style-1-img::before {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    right: -5px;
-    width: calc(100% - 10px);
-    border-radius: 8px;
-    background-color: #d1ecfd;
-    top: 10px;
-    z-index: 1;
-    transition-duration: 0.2s;
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  right: -5px;
+  width: calc(100% - 10px);
+  border-radius: 8px;
+  background-color: #d1ecfd;
+  top: 10px;
+  z-index: 1;
+  transition-duration: 0.2s;
 }
 .card-list-style-1 .style-1-img.color-bg-4::before {
   background-color: #fad2e1;
@@ -3472,15 +3472,15 @@ label {
   }
 }
 .shape-1 {
-    animation: hero-thumb-animation 2s linear infinite alternate;
+  animation: hero-thumb-animation 2s linear infinite alternate;
 }
 
 .shape-2 {
-    animation: hero-thumb-sm-animation 4s linear infinite alternate;
+  animation: hero-thumb-sm-animation 4s linear infinite alternate;
 }
 
 .shape-3 {
-    animation: hero-thumb-sm-2-animation 4s linear infinite alternate;
+  animation: hero-thumb-sm-2-animation 4s linear infinite alternate;
 }
 
 .header {
@@ -9510,5 +9510,13 @@ input.qty-val {
 .btn-play-video:hover {
   background-image: url(../imgs/template/icons/play-button-black.svg) !important;
   cursor: pointer;
-  
+}
+
+.main-img:hover {
+  transform: scale(1.01);
+  box-shadow: 4px 4px #005b6c;
+}
+
+.main-img {
+  transition: .7s ease-in-out;
 }

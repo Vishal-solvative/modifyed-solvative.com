@@ -36,19 +36,19 @@ const ThreeImageComponent = ({ props }) => {
     <div className="row mt-45 mb-30">
       <div className="col-lg-6">
         <img
-          className="img-responsive"
+          className="img-responsive main-img"
           src={props?.image_1197x1347}
           alt="Agon"
         />
       </div>
       <div className="col-lg-6">
         <img
-          className="img-responsive mb-20"
+          className="img-responsive mb-20 main-img"
           src={props?.image1_1182x627}
           alt="Agon"
         />
         <img
-          className="img-responsive"
+          className="img-responsive main-img"
           src={props?.image2_1182x627}
           alt="Agon"
         />
@@ -69,7 +69,7 @@ const SideImageComponent = ({ props }) => {
       </div>
       <div className="col-lg-4">
         <img
-          className="img-responsive bdr-10 mt-10"
+          className="img-responsive bdr-10 mt-10 main-img"
           src={props?.image}
           alt="Agon"
         />
@@ -147,7 +147,7 @@ const BlogBody = {
                 p: (props) => <p className="para-text" {...props} />,
                 img: (props) => (
                   <img
-                    className="img-responsive bdr-16"
+                    className="img-responsive bdr-16 main-img"
                     src={props?.url}
                     {...props}
                   />
