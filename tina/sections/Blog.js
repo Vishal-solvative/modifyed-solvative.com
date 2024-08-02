@@ -148,7 +148,7 @@ const Blog = {
             </div>
           ))}
 
-          <div className="col-lg-4 col-sm-12 pr-30 mb-50">
+          <div className="col-lg-4 col-sm-12 pr-30 mb-50 fade-left-desktop fade-mobile animation">
             {fields?.secondaryBlogs?.map((secondary, inx) => (
               <div className="card-list-style-1" key={inx}>
                 <Link
