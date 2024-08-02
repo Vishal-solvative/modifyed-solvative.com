@@ -1526,7 +1526,7 @@ textarea.form-control {
   font-size: 14px;
   line-height: 20px;
   width: 100%;
-  border-radius: 0px;
+  border-radius: 4px;
   color: #98a2b3;
 }
 textarea.form-control:focus {
@@ -1550,7 +1550,7 @@ textarea.form-control.form-icons {
   font-size: 14px;
   line-height: 20px;
   width: 100%;
-  border-radius: 0px;
+  border-radius: 4px;
 }
 .form-group input:focus {
   background: #ffffff;
@@ -9521,3 +9521,12 @@ input.qty-val {
   transform: scale(1.01);
 }
 
+
+.main-img:hover {
+  transform: scale(1.01);
+  box-shadow: 4px 4px #005b6c;
+}
+
+.main-img {
+  transition: .7s ease-in-out;
+}

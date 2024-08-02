@@ -42,7 +42,7 @@ const ContactUsHeading = {
             {fields?.firstHeading}
           </h1>
           <div
-            class="breadcrumbs"
+            className="breadcrumbs"
             data-tina-field={tinaField(fields, "secondHeading")}
           >
             <TinaMarkdown
@@ -55,7 +55,7 @@ const ContactUsHeading = {
                 a: (props) => (
                   <a className="color-gray-900" href="/" {...props} />
                 ),
-                bold: (props) => <span class="color-gray-500" {...props} />,
+                bold: (props) => <span className="color-gray-500" {...props} />,
               }}
             />
           </div>

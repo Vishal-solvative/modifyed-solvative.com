@@ -15,15 +15,15 @@ const VideoComponent = ({ props }) => {
   };
   return (
     <div>
-      <div class="row">
-        <div class="col-lg-20">
-          <div class="box-image mt-30 mb-30">
+      <div className="row">
+        <div className="col-lg-20">
+          <div className="box-image mt-30 mb-30">
             <a
-              class="popup-youtube btn-play-video btn-play-middle"
+              className="popup-youtube btn-play-video btn-play-middle"
               onClick={openModal}
             ></a>
             <img
-              class="img-responsive bdrd-16"
+              className="img-responsive bdrd-16"
               src={props?.image}
               alt="Agon"
               data-tina-field={tinaField(props, "image")}
@@ -33,15 +33,15 @@ const VideoComponent = ({ props }) => {
       </div>
 
       {modalOpen && (
-        <section class="modal__bg" onClick={closeModal}>
-          <div class="modal__align">
-            <div class="modal__content">
-              <div class="modal__video-align">
-                <div class="modal__spinner">
-                  <i class="fi-rr-refresh"></i>
+        <section className="modal__bg" onClick={closeModal}>
+          <div className="modal__align">
+            <div className="modal__content">
+              <div className="modal__video-align">
+                <div className="modal__spinner">
+                  <i className="fi-rr-refresh"></i>
                 </div>
                 <iframe
-                  class="modal__video-style"
+                  className="modal__video-style"
                   loading="lazy"
                   width="800"
                   height="500"
@@ -97,12 +97,12 @@ const CareerDetails = {
     ],
   },
   template: (fields) => (
-    <section class="section-box mt-50 mb-50 ">
-      <div class="container" data-tina-field={tinaField(fields, "career")}>
-        <div class="content-detail">
-          <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
+    <section className="section-box mt-50 mb-50 ">
+      <div className="container" data-tina-field={tinaField(fields, "career")}>
+        <div className="content-detail">
+          <div className="row">
+            <div className="col-lg-2"></div>
+            <div className="col-lg-8">
               <TinaMarkdown
                 content={fields?.career}
                 components={{
@@ -113,36 +113,39 @@ const CareerDetails = {
               />
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
-              <div class="border-bottom mt-50 mb-50"></div>
-              <div class="media-block">
+          <div className="row">
+            <div className="col-lg-2"></div>
+            <div className="col-lg-8">
+              <div className="border-bottom mt-50 mb-50"></div>
+              <div className="media-block">
                 <a
-                  class="btn btn-green-900 color-white text-heading-6 icon-arrow-right-white mr-20"
+                  className="btn btn-green-900 color-white text-heading-6 icon-arrow-right-white mr-20"
                   href="#"
                 >
                   Apply Now
                 </a>
-                <a class="btn btn-default icon-arrow-right" href="/contact-us">
+                <a
+                  className="btn btn-default icon-arrow-right"
+                  href="/contact-us"
+                >
                   Contact Us
                 </a>
-                <div class="float-start float-lg-end mt-30">
-                  <a class="btn btn-media mr-10" href="/#">
+                <div className="float-start float-lg-end mt-30">
+                  <a className="btn btn-media mr-10" href="/#">
                     <img
                       src="/assets/imgs/template/icons/facebook-share.svg"
                       alt="Agon"
                     />{" "}
                     Share
                   </a>
-                  <a class="btn btn-media mr-10" href="/#">
+                  <a className="btn btn-media mr-10" href="/#">
                     <img
                       src="/assets/imgs/template/icons/twitter-share.svg"
                       alt="Agon"
                     />{" "}
                     Tweet
                   </a>
-                  <a class="btn btn-media" href="/#">
+                  <a className="btn btn-media" href="/#">
                     <img
                       src="/assets/imgs/template/icons/pinterest-share.svg"
                       alt="Agon"

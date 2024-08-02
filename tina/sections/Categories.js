@@ -67,7 +67,6 @@ const Categories = {
             name: "created_at",
             label: "Created At",
             type: "datetime",
-            dateFormat: "dd mm yyyy",
           },
         ],
       },
@@ -103,6 +102,7 @@ const Categories = {
                   <Link href={categorie?.link || "#"} legacyBehavior>
                     <a>
                       <img
+                        className="main-img"
                         src={categorie?.categoryImage}
                         data-tina-field={tinaField(categorie, "categoryImage")}
                       />

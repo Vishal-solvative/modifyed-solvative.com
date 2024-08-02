@@ -105,7 +105,7 @@ const LocationList = {
                   >
                     {location?.title}
                   </h4>
-                  <p className="text-body-text color-gray-1100 mt-15">
+                  <div className="text-body-text color-gray-1100 mt-15">
                     <p data-tina-field={tinaField(location, "address")}>
                       {location?.address}
                     </p>
@@ -117,7 +117,7 @@ const LocationList = {
                     <p data-tina-field={tinaField(location, "email")}>
                       Email:{location?.email}
                     </p>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -37,7 +37,7 @@ const Gallery = {
             <img
               src={fields?.image1}
               alt="solvative"
-              className="hover-effect"
+              className="main-img hover-effect"
               data-tina-field={tinaField(fields, "image1")}
             />
           </div>
@@ -45,7 +45,7 @@ const Gallery = {
             <img
               src={fields?.image2}
               alt="solvative"
-              className="hover-effect"
+              className="main-img hover-effect"
               data-tina-field={tinaField(fields, "image2")}
             />
           </div>
