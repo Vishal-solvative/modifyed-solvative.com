@@ -62,7 +62,7 @@ const ContactUsForm = {
     ],
   },
   template: (fields) => (
-    <section className="section-box wow slideInUp  ">
+    <section className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="container mb-20 mt-140">
         <div className="bdrd-58 box-gray-100 icon-wave">
           <div className="row">

@@ -72,7 +72,7 @@ const ClientTestimony = {
   },
 
   template: (fields) => (
-    <div className="section-box wow slideInUp  pt-100 pb-100 mt-100 bg-6 ">
+    <div className="section-box pt-100 pb-100 mt-100 bg-6 ">
       <div className="container">
         <div className="row">
           <div className="col-lg-5 mb-30">
@@ -83,13 +83,13 @@ const ClientTestimony = {
               {fields?.secondaryHeading}
             </span>
             <h3
-              className="text-heading-1 mt-30"
+              className="text-heading-1 mt-30 box-animation fade-up-desktop fade-mobile animation"
               data-tina-field={tinaField(fields, "heading")}
             >
               {fields?.heading}
             </h3>
             <p
-              className="text-body-lead-large color-gray-600 mt-30"
+              className="text-body-lead-large color-gray-600 mt-30 box-animation fade-up-desktop fade-mobile animation"
               data-tina-field={tinaField(fields, "subHeading")}
             >
               {fields?.subHeading}
@@ -112,7 +112,7 @@ const ClientTestimony = {
           <div className="col-lg-7">
             <div className="row">
               {fields?.authors?.map((auth, inx) => (
-                <div className="col-lg-6 col-md-12 col-sm-12" key={inx}>
+                <div className="col-lg-6 col-md-12 col-sm-12 hover-effect box-animation fade-left-desktop fade-mobile animation" key={inx}>
                   <div className="card-grid-style-2 card-square mb-20">
                     <p
                       className="text-body-text color-gray-600 text-comment"

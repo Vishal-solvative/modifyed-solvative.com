@@ -1,0 +1,215 @@
+/* scroll-up animation with js */
+/* Animation Code */
+.animation {
+  will-change: transform;
+}
+
+@media screen and (min-width: 768px) {
+  .fade-left-desktop,
+  .fade-right-desktop {
+    opacity: 0;
+    transition: 1500ms all ease-in-out;
+  }
+  .fade-left-desktop {
+    transform: translateX(50px);
+  }
+  .fade-right-desktop {
+    transform: translateX(-50px);
+  }
+  .fade-left-desktop.animate,
+  .fade-right-desktop.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .fade-down-desktop,
+  .fade-up-desktop {
+    opacity: 0;
+    transition: 1500ms all ease-in-out;
+    transform: translateY(50px);
+  }
+  .fade-up-desktop {
+    transform: translateY(50px);
+  }
+  .fade-down-desktop {
+    transform: translateY(-50px);
+  }
+  .fade-down-desktop.animate,
+  .fade-up-desktop.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .grow-left-desktop,
+  .grow-right-desktop {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 1200ms all ease-in-out;
+  }
+  .grow-left-desktop {
+    transform-origin: right;
+  }
+  .grow-right-desktop {
+    transform-origin: left;
+  }
+  .grow-left-desktop.animate,
+  .grow-right-desktop.animate {
+    transform: scaleX(1);
+  }
+  .grow-down-desktop,
+  .grow-up-desktop {
+    transform: scaleY(0);
+    transition: 1200ms all ease-in-out;
+  }
+  .grow-up-desktop {
+    transform-origin: bottom;
+  }
+  .grow-down-desktop {
+    transform-origin: top;
+  }
+  .grow-down-desktop.animate,
+  .grow-up-desktop.animate {
+    transform: scaleY(1);
+  }
+  .stagger-desktop-1 {
+    transition-delay: 300ms;
+  }
+  .stagger-desktop-2 {
+    transition-delay: 600ms;
+  }
+  .stagger-desktop-3 {
+    transition-delay: 900ms;
+  }
+  .stagger-desktop-4 {
+    transition-delay: 1200ms;
+  }
+}
+@media screen and (max-width: 767px) {
+  .fade-down-mobile,
+  .fade-up-mobile {
+    opacity: 0;
+    transition: 1500ms all ease-in-out;
+  }
+  .fade-up-mobile {
+    transform: translateY(50px);
+  }
+  .fade-down-mobile {
+    transform: translateY(-50px);
+  }
+  .fade-down-mobile.animate,
+  .fade-up-mobile.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .grow-left-mobile,
+  .grow-right-mobile {
+    transform: scaleX(0);
+    transition: 1200ms all ease-in-out;
+  }
+  .grow-left-mobile {
+    transform-origin: right;
+  }
+  .grow-right-mobile {
+    transform-origin: left;
+  }
+  .grow-left-mobile.animate,
+  .grow-right-mobile.animate {
+    transform: scaleX(1);
+  }
+  .grow-down-mobile,
+  .grow-up-mobile {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 1200ms all ease-in-out;
+  }
+  .grow-up-mobile {
+    transform-origin: bottom;
+  }
+  .grow-down-mobile {
+    transform-origin: top;
+  }
+  .grow-down-mobile.animate,
+  .grow-up-mobile.animate {
+    transform: scaleY(1);
+  }
+  .fade-mobile {
+    opacity: 0;
+    transition: 1000ms all ease-in-out;
+  }
+  .fade-mobile.animate {
+    opacity: 1;
+  }
+}
+.box-animation {
+}
+.box-wrapper-animation {
+  position: relative;
+}
+.box-wrapper-animation p {
+  z-index: 1;
+  position: relative;
+}
+.box-wrapper-animation img {
+  z-index: 1;
+  position: relative;
+  border-radius: 10px;
+}
+.box-background-animation {
+
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+.box-row-animation {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box-row-animation > div {
+  border: 1px solid #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0.5rem;
+}
+.card-animation {
+  display: flex;
+  flex-direction: column;
+}
+.card-animation img {
+  width: 100%;
+  height: 200px;
+}
+.card-animation-content-animation {
+  background-color: #fff;
+  padding: 1rem;
+}
+.box-background-animation.showcase {
+  width: 400px;
+  height: 400px;
+}
+img.showcase {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+@media screen and (max-width: 767px) {
+  .box-animation,
+  .box-wrapper-animation {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .box-row-animation {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .box-row-animation > div {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 300px;
+  }
+}

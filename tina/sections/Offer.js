@@ -14,7 +14,7 @@ const Offer = {
   },
 
   template: (fields) => (
-    <section className="section-box wow slideInUp  ">
+    <section className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="container mt-120">
         <div className="bg-2 bdrd-58 pattern-white none-pattern pb-60">
           <div className="row">

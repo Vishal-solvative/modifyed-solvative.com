@@ -31,6 +31,46 @@ const TinaComp = (props) => {
     }
   }, []);
 
+  const useIntersectionObserver = (callback, options) => {
+    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          if (entry.isIntersecting) {
+            el.classList.add("animate");
+            return;
+          }
+        });
+      }, options);
+
+      const elements = document.querySelectorAll(".animation");
+      elements.forEach((el) => {
+        if (el) {
+          observer.observe(el);
+        }
+      });
+
+      return () => {
+        elements.forEach((el) => {
+          observer.unobserve(el);
+        });
+      };
+    }, [callback, options]);
+  };
+
+  useIntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.classList.add("animate");
+          return;
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
   return <RenderSections sections={section} />;
 };
 

@@ -75,7 +75,7 @@ const ServiceHeader2 = {
       <div className="banner-hero bg-service-2">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12 text-center wow slideInUp">
+            <div className="col-lg-12 text-center box-animation fade-up-desktop fade-mobile animation">
               <div data-tina-field={tinaField(fields, "primary_heading")}>
                 <TinaMarkdown
                   content={fields?.primary_heading}

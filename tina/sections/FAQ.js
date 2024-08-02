@@ -14,7 +14,7 @@ const FAQComponent = ({ fields }) => {
   };
 
   return (
-    <section className="section-box wow slideInUp  pt-140 pb-50 ">
+    <section className="section-box pt-140 pb-50 box-animation fade-up-desktop fade-mobile animation">
       <div className="container">
         <div className="row">
           <div className="col-lg-5 mb-40">

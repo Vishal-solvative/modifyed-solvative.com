@@ -67,7 +67,7 @@ const Perks = {
     ],
   },
   template: (fields) => (
-    <section className="section-box wow slideInUp  ">
+    <section className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="container">
         <div className="row">
           <div className="col-lg-2 col-sm-1 col-12"></div>

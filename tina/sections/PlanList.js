@@ -10,7 +10,7 @@ const PlanListComponent = ({ fields }) => {
   };
 
   return (
-    <section className="section-box wow slideInUp  mt-70 ">
+    <section className="section-box mt-70 box-animation fade-up-desktop fade-mobile animation">
       <div className="container mt-50">
         <h3
           className="text-heading-1 text-center mb-10"

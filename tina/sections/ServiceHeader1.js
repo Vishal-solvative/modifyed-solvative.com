@@ -88,7 +88,7 @@ const ServiceHeader1 = {
     ],
   },
   template: (fields) => (
-    <section className="section-box wow slideInUp  ">
+    <section className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="banner-hero bg-service-1">
         <div className="container">
           <div className="row">

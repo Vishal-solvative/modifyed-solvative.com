@@ -33,7 +33,7 @@ const WelcomeHero = {
     ],
   },
   template: (fields) => (
-    <div className="section-box wow slideInUp  ">
+    <div className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="banner-hero banner-homepage6">
         <div className="container mt-40">
           <div className="row">

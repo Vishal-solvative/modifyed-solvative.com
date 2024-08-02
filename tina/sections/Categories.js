@@ -76,7 +76,7 @@ const Categories = {
   },
 
   template: (fields) => (
-    <div className="section-box wow slideInUp  mt-140 ">
+    <div className="section-box mt-140 box-animation fade-up-desktop fade-mobile animation">
       <div className="container text-center">
         <h2
           className="text-heading-1 color-gray-900"
@@ -99,7 +99,7 @@ const Categories = {
           {fields?.categories?.map((categorie, inx) => (
             <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12" key={inx}>
               <div className="grid-category-2">
-                <div className="grid-category-image">
+                <div className="grid-category-image hover-effect">
                   <Link href={categorie?.link || "#"} legacyBehavior>
                     <a>
                       <img

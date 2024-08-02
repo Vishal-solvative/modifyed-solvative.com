@@ -1,6 +1,7 @@
 import { client } from "../tina/__generated__/databaseClient";
 import Layout from "../components/layout/Layout";
 import "../public/assets/css/style.css";
+import "../public/assets/css/scroll-up-animation.css";
 import "../public/assets/css/modal.css";
 import "../public/assets/css/swiper-custom.css";
 import ClientLayout from "./client-layout";

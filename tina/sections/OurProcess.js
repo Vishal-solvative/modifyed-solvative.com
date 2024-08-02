@@ -65,14 +65,15 @@ const OurProcess = {
     ],
   },
   template: (fields) => (
-    <div className="section-box wow slideInUp  ">
+    <div className="section-box">
       <div className="container mt-120">
         <div className="row">
-          <div className="col-lg-6 col-md-12 col-sm-12 block-img-we-do text-center">
+          <div className="col-lg-6 col-md-12 col-sm-12 block-img-we-do text-center hover-effect box-animation fade-right-desktop fade-mobile animation">
             <img
-              className="img-small img-responsive"
+              className="img-small img-responsive "
               src={fields?.secondaryImageLeft}
               alt="Agon"
+
               data-tina-field={tinaField(fields, "secondaryImageLeft")}
             />
             <div className="block-card">
@@ -92,20 +93,20 @@ const OurProcess = {
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 block-we-do">
             <h3
-              className="text-heading-1 mt-30"
+              className="text-heading-1 mt-30 box-animation fade-down-desktop fade-mobile animation"
               data-tina-field={tinaField(fields, "heading")}
             >
               {fields?.heading}
             </h3>
             <p
-              className="text-body-lead-large color-gray-400"
+              className="text-body-lead-large color-gray-400 box-animation fade-down-desktop fade-mobile animation"
               data-tina-field={tinaField(fields, "subHeading")}
             >
               {fields?.subHeading}
             </p>
             <div className="row">
               {fields?.ourprocess?.map((process, inx) => (
-                <div className="col-lg-6 col-sm-6 col-12 mt-50" key={inx}>
+                <div className="col-lg-6 col-sm-6 col-12 mt-50 box-animation fade-left-desktop fade-mobile animation" key={inx}>
                   <p
                     className="text-heading-1 color-green-900 mb-10"
                     data-tina-field={tinaField(process, "count")}

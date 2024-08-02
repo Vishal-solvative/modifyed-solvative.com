@@ -15,7 +15,7 @@ const VideoStoryComponent = ({ fields }) => {
 
   return (
     <div>
-      <section className="section-box wow slideInUp  ">
+      <section className="section-box box-animation fade-up-desktop fade-mobile animation">
         <div className="banner-hero bg-about-3">
           <div className="container">
             <div className="row">
@@ -72,7 +72,7 @@ const VideoStoryComponent = ({ fields }) => {
           </div>
         </div>
       </section>
-      <div className="section-box wow slideInUp  mt-40">
+      <div className="section-box mt-40 box-animation fade-up-desktop fade-mobile animation">
         <div className="container">
           <div className="row">
             <div className="col-lg-1"></div>
