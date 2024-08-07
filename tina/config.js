@@ -44,7 +44,7 @@ export default defineConfig({
       {
         label: "Pages",
         name: "page",
-        path: "content",
+        path: "content/page",
         format: "mdx",
         ui: {
           router: ({ document }) => {
