@@ -18,19 +18,6 @@ const TinaComp = (props) => {
   const isFooterVisible = !!page.isFooterVisible;
   const isHeaderVisible = !!page.isHeaderVisible;
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const WOW = require("wowjs");
-      new WOW.WOW({
-        boxClass: "wow",
-        animateClass: "animated",
-        offset: 0,
-        mobile: true,
-        live: true,
-      }).init();
-    }
-  }, []);
-
   const useIntersectionObserver = (callback, options) => {
     useEffect(() => {
       const observer = new IntersectionObserver((entries) => {

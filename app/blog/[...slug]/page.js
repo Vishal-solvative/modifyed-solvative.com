@@ -7,7 +7,7 @@ export default async function Blogs({ params }) {
       relativePath: `${params.slug}.mdx`,
     });
     if (!JSON.parse(JSON.stringify(res.data))) {
-      throw new Error("404");
+      throw new Error("pageNotFound");
     }
     return (
       <TinaBlogs
