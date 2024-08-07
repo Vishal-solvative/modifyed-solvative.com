@@ -4,15 +4,11 @@ import { client } from "../../tina/__generated__/databaseClient";
 export default async function Index({ params }) {
   let res = null;
   try {
-    if (params.slug == "404") {
-      throw new Error("404");
-    }
-
     res = await client.queries.page({
       relativePath: `${params.slug}.mdx`,
     });
     if (!JSON.parse(JSON.stringify(res.data))) {
-      throw new Error("404");
+      throw new Error("pageNotFound");
     }
     return (
       <TinaComp
@@ -23,7 +19,7 @@ export default async function Index({ params }) {
     );
   } catch (e) {
     const _data = await client.queries.page({
-      relativePath: `404.mdx`,
+      relativePath: `pageNotFound.mdx`,
     });
     return (
       <TinaComp
