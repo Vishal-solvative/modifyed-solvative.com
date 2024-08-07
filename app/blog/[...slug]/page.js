@@ -18,7 +18,7 @@ export default async function Blogs({ params }) {
     );
   } catch (e) {
     const _data = await client.queries.page({
-      relativePath: `404.mdx`,
+      relativePath: `pageNotFound.mdx`,
     });
     return (
       <TinaBlogs
