@@ -25,13 +25,15 @@ export default async function RootLayout({ children }) {
       </head>
 
       <body>
-        <Layout
-          data={JSON.parse(JSON.stringify(globalQuery.data))}
-          query={globalQuery.query}
-          variables={globalQuery.variables}
-        >
-          {children}
-        </Layout>
+        {globalQuery && (
+          <Layout
+            data={JSON.parse(JSON.stringify(globalQuery.data))}
+            query={globalQuery.query}
+            variables={globalQuery.variables}
+          >
+            {children}
+          </Layout>
+        )}
       </body>
     </html>
   );

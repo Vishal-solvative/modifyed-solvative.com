@@ -4,7 +4,7 @@ import { client } from "../../tina/__generated__/databaseClient";
 export default async function Index({ params }) {
   let res = null;
   try {
-    if (params.slug == "404") {
+    if (params.slug[0] == "404") {
       throw new Error("404");
     }
 
