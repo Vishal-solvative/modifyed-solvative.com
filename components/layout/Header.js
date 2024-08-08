@@ -12,9 +12,22 @@ const Header = ({
   activePage,
   setActivePage,
 }) => {
+  const [scroll, setScroll] = useState(0);
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      const scrollCheck = window.scrollY > 100;
+      if (scrollCheck !== scroll) {
+        setScroll(scrollCheck);
+      }
+    });
+  });
+
   return (
     <>
-      <header className="header sticky-bar">
+      <header
+        className={scroll ? `header sticky-bar stick ` : `header sticky-bar`}
+      >
         <div className="container">
           <div className="main-header">
             <div className="header-left">
