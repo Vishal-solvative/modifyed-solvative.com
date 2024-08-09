@@ -8,7 +8,7 @@
   .fade-left-desktop,
   .fade-right-desktop {
     opacity: 0;
-    transition: 1500ms all ease-in-out;
+    transition: 500ms all ease-in-out;
   }
   .fade-left-desktop {
     transform: translateX(50px);
@@ -24,7 +24,7 @@
   .fade-down-desktop,
   .fade-up-desktop {
     opacity: 0;
-    transition: 1500ms all ease-in-out;
+    transition: 500ms all ease-in-out;
     transform: translateY(50px);
   }
   .fade-up-desktop {
@@ -42,7 +42,7 @@
   .grow-right-desktop {
     transform: scaleX(0);
     transform-origin: left;
-    transition: 1200ms all ease-in-out;
+    transition: 500ms all ease-in-out;
   }
   .grow-left-desktop {
     transform-origin: right;
@@ -57,7 +57,7 @@
   .grow-down-desktop,
   .grow-up-desktop {
     transform: scaleY(0);
-    transition: 1200ms all ease-in-out;
+    transition: 500ms all ease-in-out;
   }
   .grow-up-desktop {
     transform-origin: bottom;
@@ -86,7 +86,7 @@
   .fade-down-mobile,
   .fade-up-mobile {
     opacity: 0;
-    transition: 1500ms all ease-in-out;
+    transition: 500ms all ease-in-out;
   }
   .fade-up-mobile {
     transform: translateY(50px);
@@ -102,7 +102,7 @@
   .grow-left-mobile,
   .grow-right-mobile {
     transform: scaleX(0);
-    transition: 1200ms all ease-in-out;
+    transition: 500ms all ease-in-out;
   }
   .grow-left-mobile {
     transform-origin: right;
@@ -118,7 +118,7 @@
   .grow-up-mobile {
     transform: scaleY(0);
     transform-origin: top;
-    transition: 1200ms all ease-in-out;
+    transition: 500ms all ease-in-out;
   }
   .grow-up-mobile {
     transform-origin: bottom;
@@ -132,7 +132,7 @@
   }
   .fade-mobile {
     opacity: 0;
-    transition: 1000ms all ease-in-out;
+    transition: 500ms all ease-in-out;
   }
   .fade-mobile.animate {
     opacity: 1;
@@ -153,7 +153,6 @@
   border-radius: 10px;
 }
 .box-background-animation {
-
   border-radius: 10px;
   height: 100%;
   width: 100%;
