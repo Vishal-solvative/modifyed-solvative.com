@@ -9521,12 +9521,11 @@ input.qty-val {
   transform: scale(1.01);
 }
 
-
 .main-img:hover {
   transform: scale(1.01);
   box-shadow: 4px 4px #005b6c;
 }
 
 .main-img {
-  transition: .7s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
