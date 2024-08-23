@@ -23,7 +23,7 @@ export default defineConfig({
     ? new LocalAuthProvider()
     : new UsernamePasswordAuthJSProvider(),
   client: {
-    referenceDepth: 1,
+    referenceDepth: 0,
   },
   branch,
   build: {
