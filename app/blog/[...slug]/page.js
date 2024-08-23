@@ -1,6 +1,9 @@
 import TinaBlogs from "../../../components/TinaBlogs";
 import { client } from "../../../tina/__generated__/databaseClient";
 export default async function Blogs({ params }) {
+  if (params.slug && params.slug[0] === "favicon.ico") {
+    return null;
+  }
   let res = null;
   try {
     res = await client.queries.blogs({

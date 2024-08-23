@@ -2,11 +2,15 @@ import TinaComp from "../../components/TinaComp";
 import TinaPage from "../../components/TinaPage";
 import { client } from "../../tina/__generated__/databaseClient";
 export default async function Index({ params }) {
+  if (params.slug && params.slug[0] === "favicon.ico") {
+    return null;
+  }
   let res = null;
   try {
     res = await client.queries.page({
       relativePath: `${params.slug}.mdx`,
     });
+
     if (!JSON.parse(JSON.stringify(res.data))) {
       throw new Error("pageNotFound");
     }
