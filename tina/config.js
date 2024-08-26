@@ -30,14 +30,22 @@ export default defineConfig({
     outputFolder: "admin",
     publicFolder: "public",
   },
+  // aws s3 bucket
   media: {
     loadCustomStore: async () => {
-      const pack = await import("next-tinacms-cloudinary");
-      return pack.TinaCloudCloudinaryMediaStore;
+      const pack = await import("next-tinacms-s3");
+      return pack.TinaCloudS3MediaStore;
     },
   },
+  //  cloudnery
 
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
+  // media: {
+  //   loadCustomStore: async () => {
+  //     const pack = await import("next-tinacms-cloudinary");
+  //     return pack.TinaCloudCloudinaryMediaStore;
+  //   },
+  // },
+
   schema: {
     collections: [
       TinaUserCollection,
