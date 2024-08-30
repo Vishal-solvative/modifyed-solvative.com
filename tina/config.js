@@ -11,7 +11,6 @@ import { LinkTemp } from "./GlobalTemplates/LinkTemp";
 import DemoGlobal from "./collections/global";
 import blogs from "./collections/blogs";
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true";
-// Your hosting provider likely exposes this as an environment variable
 const branch =
   process.env.GITHUB_BRANCH ||
   process.env.VERCEL_GIT_COMMIT_REF ||
@@ -23,28 +22,19 @@ export default defineConfig({
     ? new LocalAuthProvider()
     : new UsernamePasswordAuthJSProvider(),
   client: {
-    referenceDepth: 0,
+    referenceDepth: 1,
   },
   branch,
   build: {
     outputFolder: "admin",
     publicFolder: "public",
   },
-  // aws s3 bucket
   media: {
     loadCustomStore: async () => {
       const pack = await import("next-tinacms-s3");
       return pack.TinaCloudS3MediaStore;
     },
   },
-  //  cloudnery
-
-  // media: {
-  //   loadCustomStore: async () => {
-  //     const pack = await import("next-tinacms-cloudinary");
-  //     return pack.TinaCloudCloudinaryMediaStore;
-  //   },
-  // },
 
   schema: {
     collections: [

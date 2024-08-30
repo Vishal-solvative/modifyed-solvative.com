@@ -30,7 +30,7 @@ import BlogBody from "./BlogBody";
 import CareerDetails from "./CareerDetails";
 export default {
   WelcomeHero,
-  Blog,
+  // Blog,
   Categories,
   Clients,
   ClientTestimony,

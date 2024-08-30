@@ -32,24 +32,25 @@ export default async function Index({ params }) {
   }
 }
 
+export async function generateStaticParams() {
+  const pages = await client.queries.pageConnection();
+  const paths = pages.data?.pageConnection.edges.map((edge) => ({
+    filename: edge.node._sys.filename,
+  }));
+
+  return paths || [];
+}
+
 // export async function generateStaticParams() {
 //   const pages = await client.queries.pageConnection();
-//   const paths = pages.data?.pageConnection.edges.map((edge) => ({
-//     filename: edge.node._sys.breadcrumbs,
-//   }));
+
+//   // Filter to only include valid content files (e.g., .mdx)
+//   const paths = pages.data?.pageConnection.edges
+//     .filter((edge) => edge.node._sys.filename.endsWith('.mdx')) // Filter for .mdx files only
+//     .map((edge) => ({
+//       filename: edge.node._sys.breadcrumbs,
+//     }));
 
 //   return paths || [];
 // }
 
-export async function generateStaticParams() {
-  const pages = await client.queries.pageConnection();
-
-  // Filter to only include valid content files (e.g., .mdx)
-  const paths = pages.data?.pageConnection.edges
-    .filter((edge) => edge.node._sys.filename.endsWith('.mdx')) // Filter for .mdx files only
-    .map((edge) => ({
-      filename: edge.node._sys.breadcrumbs,
-    }));
-
-  return paths || [];
-}
