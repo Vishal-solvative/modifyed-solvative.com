@@ -1,3 +1,6 @@
+"use client";
+
+import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
 
 export const Blog = ({ data }) => {
@@ -21,6 +24,8 @@ export const Blog = ({ data }) => {
             </p>
           </div>
           <div className="col-lg-1 col-sm-1 col-12"></div>
+          <div>{data?.blog?.name}</div>
+
         </div>
       </div>
       <div className="container mt-90">
@@ -180,33 +185,39 @@ export const BlogBlockSchema = {
       label: "Sub Heading",
       required: true,
     },
+    // {
+    //   type: "object",
+    //   name: "primaryBlogs",
+    //   label: "Primary Blogs",
+    //   list: true,
+    //   fields: [
+    //     {
+    //       type: "reference",
+    //       name: "blog",
+    //       label: "Blog",
+    //       collections: ["author"],
+    //     },
+    //   ],
+    // },
+    // {
+    //   type: "object",
+    //   name: "secondaryBlogs",
+    //   label: "Secondary Blogs",
+    //   list: true,
+    //   fields: [
+    //     {
+    //       type: "reference",
+    //       name: "blog",
+    //       label: "Blog",
+    //       collections: ["blogs"],
+    //     },
+    //   ],
+    // },
     {
-      type: "object",
-      name: "primaryBlogs",
-      label: "Primary Blogs",
-      list: true,
-      fields: [
-        {
-          type: "reference",
-          name: "blog",
-          label: "Blog",
-          collections: ["blogs"],
-        },
-      ],
-    },
-    {
-      type: "object",
-      name: "secondaryBlogs",
-      label: "Secondary Blogs",
-      list: true,
-      fields: [
-        {
-          type: "reference",
-          name: "blog",
-          label: "Blog",
-          collections: ["blogs"],
-        },
-      ],
+      type: "reference",
+      name: "blog",
+      label: "Blog",
+      collections: ["author"],
     },
   ],
 };

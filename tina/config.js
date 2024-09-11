@@ -11,6 +11,8 @@ import { LinkTemp } from "./GlobalTemplates/LinkTemp";
 import Global from "./collections/global";
 import blogs from "./collections/blogs";
 import Page from "./collections/page";
+import Post from "./collections/post";
+import Author from "./collections/author";
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true";
 const branch =
   process.env.GITHUB_BRANCH ||
@@ -42,7 +44,7 @@ const config = defineConfig({
   },
 
   schema: {
-    collections: [Page, Global],
+    collections: [Page, Global, Post, Author],
   },
 });
 

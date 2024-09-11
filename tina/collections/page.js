@@ -44,7 +44,11 @@ const Page = {
       ui: {
         visualSelector: true,
       },
-      templates: [WelcomeHeroBlockSchema, CategoriesBlockSchema,],
+      templates: [
+        WelcomeHeroBlockSchema,
+        BlogBlockSchema,
+        CategoriesBlockSchema,
+      ],
     },
   ],
 };

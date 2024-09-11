@@ -40,7 +40,7 @@ const Header = ({
                   <img
                     alt="Agon"
                     src={header?.logo}
-                    data-tina-field={tinaField(header, "logo")}
+                    data-tina-field={tinaField(header, "header")}
                   />
                 </Link>
               </div>

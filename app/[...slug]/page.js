@@ -4,6 +4,11 @@ export default async function Page({ params }) {
   if (params.slug == "_next,static,css,app,styles.css.map") {
     return;
   }
+  if(params.slug =="favicon.ico")
+    {
+      return;
+    }
+  
   const data = await client.queries.page({
     relativePath: `${params.slug}.mdx`,
   });
