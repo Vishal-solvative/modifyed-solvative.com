@@ -1,56 +1,26 @@
-import TinaComp from "../../components/TinaComp";
-import TinaPage from "../../components/TinaPage";
 import { client } from "../../tina/__generated__/databaseClient";
-export default async function Index({ params }) {
-  let res = null;
-  try {
-    res = await client.queries.page({
-      relativePath: `${params.slug}.mdx`,
-    });
-
-    if (!JSON.parse(JSON.stringify(res.data))) {
-      throw new Error("pageNotFound");
-    }
-    return (
-      <TinaComp
-        data={JSON.parse(JSON.stringify(res.data))}
-        query={res.query}
-        variables={res.variables}
-      />
-    );
-  } catch (e) {
-    const _data = await client.queries.page({
-      relativePath: `pageNotFound.mdx`,
-    });
-    return (
-      <TinaComp
-        data={JSON.parse(JSON.stringify(_data.data))}
-        query={_data.query}
-        variables={_data.variables}
-      />
-    );
+import ClientPage from "./client-page";
+export default async function Page({ params }) {
+  if (params.slug == "_next,static,css,app,styles.css.map") {
+    return;
   }
+  const data = await client.queries.page({
+    relativePath: `${params.slug}.mdx`,
+  });
+  return (
+    <ClientPage
+      data={JSON.parse(JSON.stringify(data.data))}
+      query={data.query}
+      variables={data.variables}
+    ></ClientPage>
+  );
 }
 
 export async function generateStaticParams() {
   const pages = await client.queries.pageConnection();
   const paths = pages.data?.pageConnection.edges.map((edge) => ({
-    filename: edge.node._sys.filename,
+    filename: edge.node._sys.breadcrumbs,
   }));
 
   return paths || [];
 }
-
-// export async function generateStaticParams() {
-//   const pages = await client.queries.pageConnection();
-
-//   // Filter to only include valid content files (e.g., .mdx)
-//   const paths = pages.data?.pageConnection.edges
-//     .filter((edge) => edge.node._sys.filename.endsWith('.mdx')) // Filter for .mdx files only
-//     .map((edge) => ({
-//       filename: edge.node._sys.breadcrumbs,
-//     }));
-
-//   return paths || [];
-// }
-

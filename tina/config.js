@@ -8,23 +8,28 @@ import {
 } from "tinacms";
 import sections from "./sections";
 import { LinkTemp } from "./GlobalTemplates/LinkTemp";
-import DemoGlobal from "./collections/global";
+import Global from "./collections/global";
 import blogs from "./collections/blogs";
+import Page from "./collections/page";
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true";
 const branch =
   process.env.GITHUB_BRANCH ||
   process.env.VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
   "main";
-export default defineConfig({
+const config = defineConfig({
   contentApiUrlOverride: "/api/tina/gql",
   authProvider: isLocal
     ? new LocalAuthProvider()
     : new UsernamePasswordAuthJSProvider(),
-  client: {
-    referenceDepth: 1,
-  },
+  // client: {
+  //   referenceDepth: 1,
+  // },
   branch,
+  tina: {
+    publicFolder: "public",
+    mediaRoot: "uploads",
+  },
   build: {
     outputFolder: "admin",
     publicFolder: "public",
@@ -37,56 +42,8 @@ export default defineConfig({
   },
 
   schema: {
-    collections: [
-      TinaUserCollection,
-      {
-        label: "Pages",
-        name: "page",
-        path: "content/page",
-        format: "mdx",
-        ui: {
-          router: ({ document }) => {
-            if (document?._sys?.filename === "home") {
-              return "/";
-            }
-            return document?._sys?.relativePath.replace(/\.mdx$/, "");
-          },
-        },
-        fields: [
-          {
-            type: "boolean",
-            name: "isHeaderVisible",
-            label: "Show header",
-          },
-          {
-            type: "boolean",
-            name: "isFooterVisible",
-            label: "Show footer",
-          },
-          {
-            type: "string",
-            name: "pageTitle",
-            label: "Page title",
-          },
-          {
-            type: "string",
-            name: "pageDescription",
-            label: "Page description",
-          },
-          {
-            type: "object",
-            name: "section",
-            label: "Section",
-            list: true,
-            ui: {
-              visualSelector: true,
-            },
-            templates: Object.values(sections).map((e) => e.props),
-          },
-        ],
-      },
-      DemoGlobal,
-      blogs,
-    ],
+    collections: [Page, Global],
   },
 });
+
+export default config;

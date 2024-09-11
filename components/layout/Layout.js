@@ -13,7 +13,6 @@ const Layout = (props) => {
     variables: props.variables,
     data: props.data,
   });
-  console.log("data : ", data);
   const { global } = data;
   const { footer, header } = global;
 
