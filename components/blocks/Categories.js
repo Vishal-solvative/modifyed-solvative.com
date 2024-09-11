@@ -1,7 +1,7 @@
-import { LinkTemp } from "../../tina/GlobalTemplates/LinkTemp";
 import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
 import { formatDate } from "../../util/date";
+import { LinkTemp } from "../../tina/GlobalTemplates/LinkTemp";
 
 export const Categories = ({ data }) => {
   return (

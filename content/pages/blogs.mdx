@@ -1,0 +1,40 @@
+---
+isHeaderVisible: true
+isFooterVisible: true
+pageTitle: Blog
+pageDescription: This is a blog page
+section:
+    - title: Our Blog
+      subTitle: |
+          From year to year we strive to invent the most innovative technology \
+          that is used by both small enterprises and space enterprises.
+      cards:
+          - blog: content/blogs/blog1.mdx
+            _template: cardItem
+          - blog: content/blogs/blog1.mdx
+            _template: cardItem
+      _template: BlogCarousel
+    - title: Latest News
+      content: From Our Blog And Event Fanpage
+      buttonText: Load more posts
+      buttonLink: /
+      cards:
+          - blog: content/blogs/blog1.mdx
+            _template: cardItem
+          - blog: content/blogs/blog1.mdx
+            _template: cardItem
+          - blog: content/blogs/blog1.mdx
+            _template: cardItem
+      _template: LargeBlogCatalog
+    - sectionName: News Later
+      mainHeading: NEWSLETTER
+      primaryHeading: Subscribe our newsletter
+      secondaryHeading: 'By clicking the button, you are agreeing with our'
+      link:
+          text: Term and Conditions
+          icon: true
+          url: /
+      primaryImage: /user-images/banner.png
+      secondaryImage: /user-images/chart.png
+      _template: NewsLetter
+---
