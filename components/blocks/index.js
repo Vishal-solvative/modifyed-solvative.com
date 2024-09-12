@@ -24,7 +24,11 @@ import { ServiceHeader1 } from "./ServiceHeader1";
 import { ServiceHeader2 } from "./ServiceHeader2";
 import { PlanList } from "./PlanList";
 import { CareerDetails } from "./CareerDetails";
-
+import { WhatWeOffer } from "./whatWeOffer";
+import { HappyCustomers } from "./HappyCustomers";
+import { OurJourney } from "./OurJourney";
+import { HowItWorks } from "./HowItWorks";
+import { OurTeam } from "./OurTeam";
 export const Blocks = (props) => {
   return (
     <>
@@ -95,6 +99,16 @@ const Block = (section) => {
       return <PlanList data={section} />;
     case "PageSectionCareerDetails":
       return <CareerDetails data={section} />;
+    case "PageSectionWhatWeOffer":
+      return <WhatWeOffer data={section} />;
+    case "PageSectionHappyCustomers":
+      return <HappyCustomers data={section} />;
+    case "PageSectionOurJourney":
+      return <OurJourney data={section} />;
+    case "PageSectionHowItWorks":
+      return <HowItWorks data={section} />;
+    case "PageSectionOurTeam":
+      return <OurTeam data={section} />;
     default:
       return null;
   }

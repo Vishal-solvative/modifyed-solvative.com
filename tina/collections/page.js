@@ -23,6 +23,11 @@ import { ServiceHeader1BlockSchema } from "../../components/blocks/ServiceHeader
 import { ServiceHeader2BlockSchema } from "../../components/blocks/ServiceHeader2";
 import { VideoStoryBlockSchema } from "../../components/blocks/VideoStory";
 import { WelcomeHeroBlockSchema } from "../../components/blocks/WelcomeHero";
+import { WhatWeOfferBlockSchema } from "../../components/blocks/whatWeOffer";
+import { HappyCustomersBlockSchema } from "../../components/blocks/HappyCustomers";
+import { OurJourneyBlockSchema } from "../../components/blocks/OurJourney";
+import { HowItWorksBlockSchema } from "../../components/blocks/HowItWorks";
+import { OurTeamBlockSchema } from "../../components/blocks/OurTeam";
 
 const Page = {
   label: "Pages",
@@ -91,6 +96,11 @@ const Page = {
         ServiceHeader2BlockSchema,
         PlanListBlockSchema,
         CareerDetailsBlockSchema,
+        WhatWeOfferBlockSchema,
+        HappyCustomersBlockSchema,
+        OurJourneyBlockSchema,
+        HowItWorksBlockSchema,
+        OurTeamBlockSchema,
       ],
     },
   ],
