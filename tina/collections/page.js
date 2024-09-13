@@ -28,7 +28,7 @@ import { HappyCustomersBlockSchema } from "../../components/blocks/HappyCustomer
 import { OurJourneyBlockSchema } from "../../components/blocks/OurJourney";
 import { HowItWorksBlockSchema } from "../../components/blocks/HowItWorks";
 import { OurTeamBlockSchema } from "../../components/blocks/OurTeam";
-
+import { WorkListBlockSchema } from "../../components/blocks/WorkList";
 const Page = {
   label: "Pages",
   name: "page",
@@ -101,6 +101,7 @@ const Page = {
         OurJourneyBlockSchema,
         HowItWorksBlockSchema,
         OurTeamBlockSchema,
+        WorkListBlockSchema,
       ],
     },
   ],

@@ -29,6 +29,7 @@ import { HappyCustomers } from "./HappyCustomers";
 import { OurJourney } from "./OurJourney";
 import { HowItWorks } from "./HowItWorks";
 import { OurTeam } from "./OurTeam";
+import { WorkList } from "./WorkList";
 export const Blocks = (props) => {
   return (
     <>
@@ -109,6 +110,8 @@ const Block = (section) => {
       return <HowItWorks data={section} />;
     case "PageSectionOurTeam":
       return <OurTeam data={section} />;
+    case "PageSectionWorkList":
+      return <WorkList data={section} />;
     default:
       return null;
   }
