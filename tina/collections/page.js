@@ -1,4 +1,3 @@
-import { ExploreBlogBlockSchema } from "../../components/blocks/ExploreBlog";
 import { CareerDetailsBlockSchema } from "../../components/blocks/CareerDetails";
 import { CategoriesBlockSchema } from "../../components/blocks/Categories";
 import { ClientsBlockSchema } from "../../components/blocks/Clients";
@@ -40,6 +39,9 @@ import { Hero3BlockSchema } from "../../components/blocks/Hero3";
 import { Hero4BlockSchema } from "../../components/blocks/Hero4";
 import { Hero5BlockSchema } from "../../components/blocks/Hero5";
 import { Hero6BlockSchema } from "../../components/blocks/Hero6";
+import { BlogCarouselBlockSchema } from "../../components/blocks/BlogCarousel";
+import { ExploreBlogBlockSchema } from "../../components/blocks/ExploreBlog";
+import { BlogListBlockSchema } from "../../components/blocks/BlogList";
 
 const Page = {
   label: "Pages",
@@ -108,7 +110,6 @@ const Page = {
         ServiceHeader2BlockSchema,
         PlanListBlockSchema,
         CareerDetailsBlockSchema,
-        ExploreBlogBlockSchema,
         CustomerListBlockSchema,
         SupportTeamBlockSchema,
         FAQCategoryBlockSchema,
@@ -126,6 +127,9 @@ const Page = {
         Hero4BlockSchema,
         Hero5BlockSchema,
         Hero6BlockSchema,
+        ExploreBlogBlockSchema,
+        BlogCarouselBlockSchema,
+        BlogListBlockSchema,
       ],
     },
   ],

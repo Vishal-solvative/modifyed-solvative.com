@@ -41,6 +41,8 @@ import { Hero3 } from "./Hero3";
 import { Hero4 } from "./Hero4";
 import { Hero5 } from "./Hero5";
 import { Hero6 } from "./Hero6";
+import { BlogCarousel } from "./BlogCarousel";
+import { BlogList } from "./BlogList";
 
 export const Blocks = (props) => {
   // console.log("props : ", props);
@@ -146,6 +148,10 @@ const Block = (section) => {
       return <Hero5 data={section} />;
     case "PageSectionHero6":
       return <Hero6 data={section} />;
+    case "PageSectionBlogCarousel":
+      return <BlogCarousel data={section} />;
+    case "PageSectionBlogList":
+      return <BlogList data={section} />;
     default:
       return null;
   }
