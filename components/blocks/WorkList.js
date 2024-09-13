@@ -1,230 +1,139 @@
-"use client";
-
+import CounterUp from "../../components/elements/CounterUp";
 import { tinaField } from "tinacms/dist/react";
-import { LinkTemp } from "../../tina/GlobalTemplates/LinkTemp";
-import Link from "next/link";
-import { useState } from "react";
 
 export const WorkList = ({ data }) => {
-  console.log("worklist", data);
-  const [activeIndex, setActiveIndex] = useState(1);
-  const [modal, setModal] = useState(false);
-  const openModal = () => {
-    setModal(!modal);
-  };
-  const handleOnClick = (index) => {
-    setActiveIndex(index); // remove the curly braces
-  };
   return (
-    <section className="section-box">
+    <div className="section-box mt-100">
       <div className="container">
         <div className="row">
-          <div className="col-lg-2 col-sm-1 col-12" />
-          <div className="col-lg-8 col-sm-10 col-12 text-center mt-70">
-            <h2
-              className="text-heading-1 color-gray-900"
-              data-tina-field={tinaField(data, "firstTitle")}
-            >
-              {data?.firstTitle}
-              <br className="d-lg-block d-none" />
-              {data?.belowTitle}
-            </h2>
-            <p
-              className="text-body-lead-large color-gray-600 mt-20"
-              data-tina-field={tinaField(data, "description")}
-            >
-              {data?.description}
-            </p>
-          </div>
-          <div className="col-lg-2 col-sm-1 col-12" />
-        </div>
-      </div>
-      <div className="container">
-        <div className="text-center mt-90">
-          <ul className="nav" role="tablist">
-            {data?.services?.map((service, index) => (
-              <li
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleOnClick(index + 1);
-                }}
-                key={index}
-              >
-                <Link href="#" legacyBehavior>
-                  <a
-                    className={
-                      activeIndex === index + 1
-                        ? "btn btn-default btn-bd-green-hover btn-select active"
-                        : "btn btn-default btn-bd-green-hover btn-select"
-                    }
-                    data-tina-field={tinaField(service, "text")}
-                  >
-                    {service?.text}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <div className="container">
-        <div className="tab-content">
-          {data?.work?.map((w, index) => (
-            <div
-              className={
-                activeIndex === index + 1
-                  ? "tab-pane fade  active show"
-                  : "tab-pane fade "
-              }
-              key={index}
-            >
-              <div className="bg-2 panel-box mt-50">
-                <div className="row">
-                  <div className="col-lg-6 col-md-12">
-                    <div className="box-optimized">
-                      <h3
-                        className="text-heading-2"
-                        data-tina-field={tinaField(w, "title")}
-                      >
-                        {w?.title}
-                      </h3>
-                      <p
-                        className="text-body-excerpt mt-30"
-                        data-tina-field={tinaField(w, "description")}
-                      >
-                        {w?.description}
-                      </p>
-                      <div className="mt-40">
-                        <Link href={"#"} legacyBehavior>
-                          <a className="btn btn-default btn-white icon-arrow-right">
-                            Learn more
-                          </a>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-12">
-                    <div
-                      className="block-video icon-pattern"
-                      data-tina-field={tinaField(w, "image")}
+          <div className="col-lg-6">
+            <div className="row">
+              {data?.cards?.map((card, i) => (
+                <div
+                  key={i}
+                  className="col-lg-6 col-md-6 col-sm-6 col-12 pr-mb-70 mb-30"
+                >
+                  <h3 className="text-display-3">
+                    <span
+                      className="count"
+                      data-tina-field={tinaField(card, "number")}
                     >
-                      <a
-                        className="popup-youtube btn-play-video"
-                        onClick={openModal}
-                      ></a>
-                      <img
-                        className="img-responsive"
-                        src={w?.image}
-                        alt="Agon"
-                      />
-                    </div>
-                  </div>
+                      {card?.number}
+                    </span>
+                  </h3>
+                  <span
+                    className="text-body-quote"
+                    data-tina-field={tinaField(card, "cardTitle")}
+                  >
+                    {card?.cardTitle}
+                  </span>
+                  <p
+                    className="text-body-text"
+                    data-tina-field={tinaField(card, "description")}
+                  >
+                    {card?.description}
+                  </p>
                 </div>
+              ))}
+            </div>
+          </div>
+          <div className="col-lg-6 pdl-md">
+            <h3
+              className="text-heading-1"
+              data-tina-field={tinaField(data, "headingText")}
+            >
+              {data?.headingText}
+            </h3>
+            <div className="mt-40 box-mw-610">
+              <div className="form-newsletter-2">
+                <form>
+                  <input
+                    className="input-newsletter"
+                    placeholder="Enter your email ..."
+                    value=""
+                  />
+                  <button
+                    className="btn btn-newsletter icon-arrow-right-white"
+                    type="submit"
+                  >
+                    Get A Quote
+                  </button>
+                </form>
               </div>
             </div>
-          ))}
+            <div className="mt-40">
+              <ul className="list-icon-3">
+                {data?.tagList?.map((tag, i) => (
+                  <li
+                    key={i}
+                    className="text-body-text-md"
+                    data-tina-field={tinaField(tag, "tag")}
+                  >
+                    {tag?.tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
 export const WorkListBlockSchema = {
   label: "Work List",
-  name: "workList",
+  name: "WorkList",
   ui: {
-    previewSrc: "/thumbnails/work-list.png",
-    defaultItem: {
-      firstTitle: "See why we are trusted",
-      belowTitle: "the world over",
-      description:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit laborum — semper quis lectus nulla.",
+    itemProps: (item) => {
+      return { label: item.sectionName };
     },
+    previewSrc: "/thumbnails/work-list.png",
   },
   fields: [
     {
       type: "string",
-      name: "firstTitle",
-      label: "First Title",
-      required: true,
+      name: "sectionName",
+      label: "Section Name",
     },
     {
       type: "string",
-      name: "belowTitle",
-      label: "Below Title",
-    },
-    {
-      type: "string",
-      name: "description",
-      label: "Description",
-      required: true,
+      name: "headingText",
+      label: "Primary Heading",
     },
     {
       type: "object",
-      name: "services",
-      label: "Services",
+      name: "cards",
+      label: "Card List",
       list: true,
-      ui: {
-        itemProps: (item) => {
-          return { label: item.text };
-        },
-        defaultItem: {
-          text: "Work Name",
-        },
-      },
       fields: [
         {
           type: "string",
-          name: "text",
-          label: "Text",
-          required: true,
+          name: "number",
+          label: "Number",
         },
         {
           type: "string",
-          name: "url",
-          label: "Url",
-        },
-      ],
-    },
-    {
-      type: "object",
-      name: "work",
-      label: "Work",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          return { label: item.title };
-        },
-        defaultItem: {
-          title: "Optimize and scale, easy to start",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        },
-      },
-      fields: [
-        {
-          type: "string",
-          name: "title",
+          name: "cardTitle",
           label: "Title",
-          required: true,
         },
         {
           type: "string",
           name: "description",
           label: "Description",
-          required: true,
         },
-        {
-          type: "image",
-          name: "image",
-          label: "Image",
-          required: true,
-        },
+      ],
+    },
+    {
+      type: "object",
+      name: "tagList",
+      label: "Tags",
+      list: true,
+      fields: [
         {
           type: "string",
-          name: "url",
-          label: "Url",
+          name: "tag",
+          label: "Tag",
         },
       ],
     },

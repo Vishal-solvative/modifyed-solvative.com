@@ -51,7 +51,7 @@ const OurProcess = {
         fields: [
           {
             label: "Title",
-            name: "title",
+            name: "processTitle",
             type: "string",
             required: true,
           },
@@ -115,9 +115,9 @@ const OurProcess = {
                   </p>
                   <h4
                     className="text-heading-6 icon-leaf"
-                    data-tina-field={tinaField(process, "title")}
+                    data-tina-field={tinaField(process, "processTitle")}
                   >
-                    {process?.title}
+                    {process?.processTitle}
                   </h4>
                   <p
                     className="text-body-excerpt color-gray-600 mt-15"

@@ -10,9 +10,9 @@ export const HowItWorks = ({ data }) => {
           <div className="col-lg-3 col-md-12 col-sm-12 mt-50">
             <h2
               className="text-heading-1 color-gray-900 mb-30"
-              data-tina-field={tinaField(data, "title")}
+              data-tina-field={tinaField(data, "workTitle")}
             >
-              {data?.title}
+              {data?.workTitle}
             </h2>
             <p
               className="text-body-excerpt color-gray-600"
@@ -35,9 +35,9 @@ export const HowItWorks = ({ data }) => {
                   )}
                   <h4
                     className="text-heading-4"
-                    data-tina-field={tinaField(item, "title")}
+                    data-tina-field={tinaField(item, "workTitle")}
                   >
-                    {item?.title}
+                    {item?.workTitle}
                   </h4>
                   <p
                     className="text-body-text color-gray-600 mt-15"
@@ -60,7 +60,7 @@ export const HowItWorksBlockSchema = {
   ui: {
     previewSrc: "/thumbnails/how-it-works.png",
     defaultItem: {
-      title: "How It Works",
+      workTitle: "How It Works",
       description:
         "Ac sapien purus tristique neque nibh vitae faucibus non phasellus vulputate nulla in eget amet, risus",
     },
@@ -68,7 +68,7 @@ export const HowItWorksBlockSchema = {
   fields: [
     {
       type: "string",
-      name: "title",
+      name: "workTitle",
       label: "Title",
       required: true,
     },
@@ -85,10 +85,10 @@ export const HowItWorksBlockSchema = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item.title };
+          return { label: item.workTitle };
         },
         defaultItem: {
-          title: "1. Acquisition",
+          workTitle: "1. Acquisition",
           description:
             "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit laborum — semper quis lectus nulla.",
         },
@@ -101,7 +101,7 @@ export const HowItWorksBlockSchema = {
         },
         {
           type: "string",
-          name: "title",
+          name: "workTitle",
           label: "Title",
           required: true,
         },

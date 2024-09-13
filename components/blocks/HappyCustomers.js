@@ -12,9 +12,9 @@ export const HappyCustomers = ({ data }) => {
             <div className="col-lg-8 col-sm-10 col-12 text-center">
               <h2
                 className="text-heading-1 color-gray-900 mt-30"
-                data-tina-field={tinaField(data, "title")}
+                data-tina-field={tinaField(data, "customerTitle")}
               >
-                {data?.title}
+                {data?.customerTitle}
               </h2>
               <p
                 className="text-body-lead-large color-gray-600 mt-20"
@@ -32,9 +32,9 @@ export const HappyCustomers = ({ data }) => {
                   <div className="card-grid-style-2 hover-up mb-20">
                     <h5
                       className="text-heading-5 color-gray-900"
-                      data-tina-field={tinaField(item, "title")}
+                      data-tina-field={tinaField(item, "customerTitle")}
                     >
-                      {item?.title}
+                      {item?.customerTitle}
                     </h5>
                     <p
                       className="text-body-text color-gray-600 mt-20 text-comment"
@@ -79,14 +79,14 @@ export const HappyCustomersBlockSchema = {
   ui: {
     previewSrc: "/thumbnails/happy-customers.png",
     defaultItem: {
-      title: "Happy Customers",
+      customerTitle: "Happy Customers",
       description: "Know about our clients, we are a woldwide corporate brand.",
     },
   },
   fields: [
     {
       type: "string",
-      name: "title",
+      name: "customerTitle",
       label: "Title",
       required: true,
     },
@@ -103,10 +103,10 @@ export const HappyCustomersBlockSchema = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item.title };
+          return { label: item.customerTitle };
         },
         defaultItem: {
-          title: "Satisfied client testimonial",
+          customerTitle: "Satisfied client testimonial",
           quote:
             "Even factoring differences in body weight between children and adults into account, it would still not reach an intoxicating level in children.",
         },
@@ -114,7 +114,7 @@ export const HappyCustomersBlockSchema = {
       fields: [
         {
           type: "string",
-          name: "title",
+          name: "customerTitle",
           label: "Title",
           required: true,
         },

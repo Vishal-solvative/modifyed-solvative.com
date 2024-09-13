@@ -47,9 +47,9 @@ export const OurJourney = ({ data }) => {
                     </div>
                     <h3
                       className="text-heading-5 mb-10"
-                      data-tina-field={tinaField(item, "title")}
+                      data-tina-field={tinaField(item, "journeyTitle")}
                     >
-                      {item?.title}
+                      {item?.journeyTitle}
                     </h3>
                     <p
                       className="text-body-text color-gray-500"
@@ -76,7 +76,7 @@ export const OurJourneyBlockSchema = {
     previewSrc: "/thumbnails/our-journey.png",
     defaultItem: {
       caption: "How It Work ?",
-      title: "Our Journey",
+      firstTitle: "Our Journey",
     },
   },
   fields: [
@@ -104,10 +104,10 @@ export const OurJourneyBlockSchema = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item.title };
+          return { label: item.journeyTitle };
         },
         defaultItem: {
-          title: "Start Plan",
+          journeyTitle: "Start Plan",
           description: "Choose any of our packages",
         },
       },
@@ -120,7 +120,7 @@ export const OurJourneyBlockSchema = {
         },
         {
           type: "string",
-          name: "title",
+          name: "journeyTitle",
           label: "Title",
           required: true,
         },

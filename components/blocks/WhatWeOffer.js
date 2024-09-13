@@ -13,9 +13,9 @@ export const WhatWeOffer = ({ data }) => {
             <div className="col-lg-8 col-sm-10 col-12 text-center mt-70">
               <h2
                 className="text-heading-1 color-gray-900"
-                data-tina-field={tinaField(data, "title")}
+                data-tina-field={tinaField(data, "offerTitle")}
               >
-                {data?.title}
+                {data?.offerTitle}
               </h2>
               <p
                 className="text-body-lead-large color-gray-600 mt-20"
@@ -40,7 +40,7 @@ export const WhatWeOfferBlockSchema = {
   ui: {
     previewSrc: "/thumbnails/what-we-offer.png",
     defaultItem: {
-      title: "What We Offer",
+      offerTitle: "What We Offer",
       description:
         "What makes us different from others? We give holistic solutions with strategy, design and technology.",
     },
@@ -48,7 +48,7 @@ export const WhatWeOfferBlockSchema = {
   fields: [
     {
       type: "string",
-      name: "title",
+      name: "offerTitle",
       label: "Title",
       required: true,
     },
@@ -65,10 +65,10 @@ export const WhatWeOfferBlockSchema = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item.title };
+          return { label: item.offerTitle };
         },
         defaultItem: {
-          title: "Market Research",
+          offerTitle: "Market Research",
           quote: "One make creepeth, man bearing theira firmament.",
         },
       },
@@ -80,7 +80,7 @@ export const WhatWeOfferBlockSchema = {
         },
         {
           type: "string",
-          name: "title",
+          name: "offerTitle",
           label: "Title",
           required: true,
         },

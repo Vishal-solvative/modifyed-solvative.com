@@ -11,9 +11,9 @@ export const OurTeam = ({ data }) => {
           <div className="col-lg-9 col-sm-8">
             <h3
               className="text-heading-1 mb-10"
-              data-tina-field={tinaField(data, "title")}
+              data-tina-field={tinaField(data, "teamTitle")}
             >
-              {data?.title}
+              {data?.teamTitle}
             </h3>
             <p
               className="text-body-lead-large color-gray-600"
@@ -37,14 +37,14 @@ export const OurTeamBlockSchema = {
   ui: {
     previewSrc: "/thumbnails/our-team.png",
     defaultItem: {
-      title: "Our Team",
+      teamTitle: "Our Team",
       description: "Decades of experience in design and development",
     },
   },
   fields: [
     {
       type: "string",
-      name: "title",
+      name: "teamTitle",
       label: "Title",
       required: true,
     },

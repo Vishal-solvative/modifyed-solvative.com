@@ -1,6 +1,6 @@
 import { tinaField } from "tinacms/dist/react";
 import { WelcomeHero } from "./WelcomeHero";
-import { Blog } from "./Blog";
+import { ExploreBlog } from "./ExploreBlog";
 import { Categories } from "./Categories";
 import { Clients } from "./Clients";
 import { Gallery } from "./Gallery";
@@ -30,6 +30,24 @@ import { OurJourney } from "./OurJourney";
 import { HowItWorks } from "./HowItWorks";
 import { OurTeam } from "./OurTeam";
 import { WorkList } from "./WorkList";
+import { CustomerList } from "./CustomerList";
+import { SupportTeam } from "./SupportTeam";
+import { FAQCategory } from "./FAQCategory";
+import { OurWork } from "./OurWork";
+import { FAQ2 } from "./FAQ2";
+import { OurApproach } from "./OurApproach";
+import { PartnerList } from "./PartnerList";
+import { Stats } from "./Stats";
+import { OurIdea } from "./OurIdea";
+import { Hero } from "./Hero";
+import { OurIdea2 } from "./OurIdea2";
+import { Hero2 } from "./Hero2";
+import { Hero3 } from "./Hero3";
+import { Hero4 } from "./Hero4";
+import { Hero5 } from "./Hero5";
+import { Hero6 } from "./Hero6";
+import { BlogCarousel } from "./BlogCarousel";
+import { BlogList } from "./BlogList";
 export const Blocks = (props) => {
   return (
     <>
@@ -47,13 +65,12 @@ export const Blocks = (props) => {
 };
 
 const Block = (section) => {
-  switch (section?.__typename) {
+  // console.log(section);
+  switch (section.__typename) {
     case "PageSectionWelcomeHero":
       return <WelcomeHero data={section} />;
-    // case "PageSectionBlog":
-    //   return <Blog data={section} />;
     case "PageSectionExploreBlog":
-      return <Blog data={section} />;
+      return <ExploreBlog data={section} />;
     case "PageSectionCategories":
       return <Categories data={section} />;
     case "PageSectionClients":
@@ -112,6 +129,42 @@ const Block = (section) => {
       return <OurTeam data={section} />;
     case "PageSectionWorkList":
       return <WorkList data={section} />;
+    case "PageSectionCustomerList":
+      return <CustomerList data={section} />;
+    case "PageSectionSupportTeam":
+      return <SupportTeam data={section} />;
+    case "PageSectionFAQCategory":
+      return <FAQCategory data={section} />;
+    case "PageSectionOurWork":
+      return <OurWork data={section} />;
+    case "PageSectionFAQ2":
+      return <FAQ2 data={section} />;
+    case "PageSectionOurApproach":
+      return <OurApproach data={section} />;
+    case "PageSectionPartnerList":
+      return <PartnerList data={section} />;
+    case "PageSectionStats":
+      return <Stats data={section} />;
+    case "PageSectionOurIdea":
+      return <OurIdea data={section} />;
+    case "PageSectionHero":
+      return <Hero data={section} />;
+    case "PageSectionOurIdea2":
+      return <OurIdea2 data={section} />;
+    case "PageSectionHero2":
+      return <Hero2 data={section} />;
+    case "PageSectionHero3":
+      return <Hero3 data={section} />;
+    case "PageSectionHero4":
+      return <Hero4 data={section} />;
+    case "PageSectionHero5":
+      return <Hero5 data={section} />;
+    case "PageSectionHero6":
+      return <Hero6 data={section} />;
+    case "PageSectionBlogCarousel":
+      return <BlogCarousel data={section} />;
+    case "PageSectionBlogList":
+      return <BlogList data={section} />;
     default:
       return null;
   }
