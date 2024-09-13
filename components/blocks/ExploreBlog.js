@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { tinaField } from "tinacms/dist/react";
+import { formatDate } from "../../util/date";
 
-export const Blog = ({ data }) => {
+export const ExploreBlog = ({ data }) => {
+  console.log(data);
   return (
     <div className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="container mt-130">
@@ -8,16 +11,16 @@ export const Blog = ({ data }) => {
           <div className="col-lg-1 col-sm-1 col-12"></div>
           <div
             className="col-lg-10 col-sm-10 col-12 text-center"
-            data-tina-field={tinaField(data, "heading")}
+            data-tina-field={tinaField(data, "heading1")}
           >
             <h2 className="text-heading-1 color-gray-900 mb-10">
-              {data?.heading}
+              {data?.heading1}
             </h2>
             <p
               className="text-body-lead-large color-gray-600 mt-20"
-              data-tina-field={tinaField(data, "subHeading")}
+              data-tina-field={tinaField(data, "heading2")}
             >
-              {data?.subHeading}
+              {data?.heading2}
             </p>
           </div>
           <div className="col-lg-1 col-sm-1 col-12"></div>
@@ -30,7 +33,7 @@ export const Blog = ({ data }) => {
               <div className="card-grid-style-4">
                 <div className={`grid-4-img mb-20 ${primary?.blog?.bgcolor}`}>
                   <Link
-                    href={`blog/${primary?.blog?._sys?.filename || "#"}`}
+                    href={`blogs/${primary?.blog?._sys?.filename || "#"}`}
                     legacyBehavior
                   >
                     <a>
@@ -46,7 +49,7 @@ export const Blog = ({ data }) => {
                   </Link>
                 </div>
                 <Link
-                  href={`blog/${primary?.blog?._sys?.filename || "#"}`}
+                  href={`blogs/${primary?.blog?._sys?.filename || "#"}`}
                   legacyBehavior
                 >
                   <a
@@ -92,7 +95,7 @@ export const Blog = ({ data }) => {
             {data?.secondaryBlogs?.map((secondary, inx) => (
               <div className="card-list-style-1" key={inx}>
                 <Link
-                  href={`blog/${secondary?.blog?._sys?.filename || "#"}`}
+                  href={`blogs/${secondary?.blog?._sys?.filename || "#"}`}
                   legacyBehavior
                 >
                   <a
@@ -129,7 +132,7 @@ export const Blog = ({ data }) => {
                 </div>
                 <div className={`style-1-img ${secondary?.blog?.bgcolor} `}>
                   <Link
-                    href={`blog/${secondary?.blog?._sys?.filename || "#"}`}
+                    href={`blogs/${secondary?.blog?._sys?.filename || "#"}`}
                     legacyBehavior
                   >
                     <a>
@@ -153,7 +156,7 @@ export const Blog = ({ data }) => {
   );
 };
 
-export const BlogBlockSchema = {
+export const ExploreBlogBlockSchema = {
   label: "Explore Blog",
   name: "exploreBlog",
   ui: {
@@ -170,15 +173,13 @@ export const BlogBlockSchema = {
     },
     {
       type: "string",
-      name: "heading",
+      name: "heading1",
       label: "Heading",
-      required: true,
     },
     {
       type: "string",
-      name: "subHeading",
+      name: "heading2",
       label: "Sub Heading",
-      required: true,
     },
     {
       type: "object",

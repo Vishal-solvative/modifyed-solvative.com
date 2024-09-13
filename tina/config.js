@@ -6,8 +6,6 @@ import {
   defineConfig as defineConfig,
   LocalAuthProvider as LocalAuthProvider,
 } from "tinacms";
-import sections from "./sections";
-import { LinkTemp } from "./GlobalTemplates/LinkTemp";
 import Global from "./collections/global";
 import blogs from "./collections/blogs";
 import Page from "./collections/page";
@@ -22,9 +20,9 @@ const config = defineConfig({
   authProvider: isLocal
     ? new LocalAuthProvider()
     : new UsernamePasswordAuthJSProvider(),
-  // client: {
-  //   referenceDepth: 1,
-  // },
+  client: {
+    referenceDepth: 1,
+  },
   branch,
   tina: {
     publicFolder: "public",
@@ -42,7 +40,7 @@ const config = defineConfig({
   },
 
   schema: {
-    collections: [Page, Global],
+    collections: [Page, Global, blogs],
   },
 });
 
