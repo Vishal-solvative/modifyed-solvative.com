@@ -37,6 +37,7 @@ import { OurApproachBlockSchema } from "../../components/blocks/OurApproach";
 import { PartnerListBlockSchema } from "../../components/blocks/PartnerList";
 import { StatsBlockSchema } from "../../components/blocks/Stats";
 import { OurIdeaBlockSchema } from "../../components/blocks/OurIdea";
+import { WorkList2BlockSchema } from "../../components/blocks/WorkList2";
 import { HeroBlockSchema } from "../../components/blocks/Hero";
 import { OurIdea2BlockSchema } from "../../components/blocks/OurIdea2";
 import { Hero2BlockSchema } from "../../components/blocks/Hero2";
@@ -130,6 +131,7 @@ const Page = {
         PartnerListBlockSchema,
         StatsBlockSchema,
         OurIdeaBlockSchema,
+        WorkList2BlockSchema,
         HeroBlockSchema,
         OurIdea2BlockSchema,
         Hero2BlockSchema,
