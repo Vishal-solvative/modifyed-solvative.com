@@ -39,6 +39,7 @@ import { OurApproach } from "./OurApproach";
 import { PartnerList } from "./PartnerList";
 import { Stats } from "./Stats";
 import { OurIdea } from "./OurIdea";
+import { WorkList2 } from "./WorkList2";
 import { Hero } from "./Hero";
 import { OurIdea2 } from "./OurIdea2";
 import { Hero2 } from "./Hero2";
@@ -127,8 +128,8 @@ const Block = (section) => {
       return <HowItWorks data={section} />;
     case "PageSectionOurTeam":
       return <OurTeam data={section} />;
-    case "PageSectionWorkList":
-      return <WorkList data={section} />;
+    case "PageSectionWorkList2":
+      return <WorkList2 data={section} />;
     case "PageSectionCustomerList":
       return <CustomerList data={section} />;
     case "PageSectionSupportTeam":
@@ -147,6 +148,8 @@ const Block = (section) => {
       return <Stats data={section} />;
     case "PageSectionOurIdea":
       return <OurIdea data={section} />;
+    case "PageSectionWorkList":
+      return <WorkList data={section} />;
     case "PageSectionHero":
       return <Hero data={section} />;
     case "PageSectionOurIdea2":
