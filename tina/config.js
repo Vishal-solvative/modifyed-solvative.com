@@ -42,7 +42,7 @@ const config = defineConfig({
   },
 
   schema: {
-    collections: [Page, Global, blogs],
+    collections: [TinaUserCollection, Page, Global, blogs],
   },
 });
 
