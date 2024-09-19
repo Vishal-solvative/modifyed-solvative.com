@@ -1,6 +1,41 @@
+"use client";
 import { tinaField } from "tinacms/dist/react";
-
+import { useState } from "react";
 export const ContactUsForm = ({ data }) => {
+  const [name, setName] = useState("Vishal");
+  const [company, setCompany] = useState("Solvative");
+  const [email, setEmail] = useState("vishalmishra6604@gmail.com");
+  const [phone, setPhone] = useState("6239135363");
+  const [message, setMessage] = useState("Testing Locally");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          company,
+          email,
+          phone,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+    }
+  };
+
   return (
     <section className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="container mb-20 mt-140">
@@ -59,6 +94,8 @@ export const ContactUsForm = ({ data }) => {
                     <input
                       className="form-control"
                       placeholder="Enter your name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
                 </div>
@@ -67,12 +104,19 @@ export const ContactUsForm = ({ data }) => {
                     <input
                       className="form-control"
                       placeholder="Company (optional)"
+                      value={company}
+                      onChange={(e) => setCompany(e.target.value)}
                     />
                   </div>
                 </div>
                 <div className="col-lg-6">
                   <div className="form-group">
-                    <input className="form-control" placeholder="Your email" />
+                    <input
+                      className="form-control"
+                      placeholder="Your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -80,6 +124,8 @@ export const ContactUsForm = ({ data }) => {
                     <input
                       className="form-control"
                       placeholder="Phone number"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                     />
                   </div>
                 </div>
@@ -88,6 +134,8 @@ export const ContactUsForm = ({ data }) => {
                     <textarea
                       className="form-control"
                       placeholder="Tell us about yourself"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                   </div>
                 </div>
@@ -95,6 +143,7 @@ export const ContactUsForm = ({ data }) => {
                   <button
                     className="btn btn-black icon-arrow-right-white mr-40 mb-20"
                     type="submit"
+                    onClick={handleSubmit}
                   >
                     Send Message
                   </button>

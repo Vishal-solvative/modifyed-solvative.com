@@ -14,7 +14,11 @@ export async function generateStaticParams() {
 
 export async function fetchData(slug) {
   try {
-    if (slug == "vite.svg.mdx") {
+    if (
+      slug == "vite.svg.mdx" ||
+      slug == "favicon.ico" ||
+      slug == "_next,static,css,app,styles.css.map"
+    ) {
       return;
     }
     const data = await client.queries.page({
