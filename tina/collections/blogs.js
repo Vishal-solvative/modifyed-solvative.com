@@ -1,6 +1,6 @@
 import sections from "../sections";
 
-export default {
+const Blogs = {
   label: "Blogs",
   name: "blogs",
   path: "content/blogs",
@@ -195,3 +195,5 @@ export default {
     },
   ],
 };
+
+export default Blogs;

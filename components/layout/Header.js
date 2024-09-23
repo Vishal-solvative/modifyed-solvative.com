@@ -2,17 +2,17 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { fetchPages } from "../../util/pagesData";
-import { useTina } from "tinacms/dist/react";
 import { tinaField } from "tinacms/dist/react";
-const Header = ({
-  header,
-  headerStyle = false,
-  handleOpen,
-  activePage,
-  setActivePage,
-}) => {
+import { useActivePage } from "../../hooks/useActivePage";
+const Header = ({ header, headerStyle = false, handleOpen }) => {
   const [scroll, setScroll] = useState(0);
+
+  const { activePage, updateActivePage } = useActivePage();
+
+  useEffect(() => {
+    updateActivePage(window.location.pathname);
+    console.log("use effect");
+  }, []);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
@@ -35,7 +35,7 @@ const Header = ({
                 <Link
                   className="d-flex"
                   href="/"
-                  onClick={() => setActivePage("/")}
+                  onClick={() => updateActivePage("/")}
                 >
                   <img
                     alt="Agon"
@@ -50,7 +50,7 @@ const Header = ({
                     {header?.navLinks?.map((navLink, index) => (
                       <li
                         key={index}
-                        onClick={() => setActivePage(navLink?.link)}
+                        onClick={() => updateActivePage(navLink?.link)}
                       >
                         <Link
                           href={navLink?.link}

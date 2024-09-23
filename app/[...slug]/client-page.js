@@ -2,6 +2,8 @@
 import { useTina } from "tinacms/dist/react";
 import { Blocks } from "../../components/blocks";
 import { useEffect } from "react";
+import { Provider } from "react-redux";
+import { store } from "../../redux/store";
 
 export default function ClientPage(props) {
   const { data } = useTina({
@@ -50,5 +52,9 @@ export default function ClientPage(props) {
     { threshold: 0.2 }
   );
 
-  return <Blocks {...data?.page} />;
+  return (
+    <Provider store={store}>
+      <Blocks {...data?.page} />
+    </Provider>
+  );
 }

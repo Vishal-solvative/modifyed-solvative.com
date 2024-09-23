@@ -3,7 +3,10 @@
 import { LinkTemp } from "../../tina/GlobalTemplates/LinkTemp";
 import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
-export const WelcomeHero = ({data}) => {
+import { useActivePage } from "../../hooks/useActivePage";
+
+export const WelcomeHero = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <div className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="banner-hero banner-homepage6">
@@ -48,6 +51,7 @@ export const WelcomeHero = ({data}) => {
                       className={`btn btn-black shape-square ${
                         data?.getStarted?.icon && "icon-arrow-right-white"
                       }`}
+                      onClick={() => updateActivePage(data?.getStarted?.url)}
                       data-tina-field={tinaField(data?.getStarted, "text")}
                     >
                       {data?.getStarted?.text}
@@ -59,6 +63,7 @@ export const WelcomeHero = ({data}) => {
                     <a
                       className="btn btn-link icon-triangle color-gray-900 ml-40"
                       data-tina-field={tinaField(data?.howToStart, "text")}
+                      onClick={() => updateActivePage(data?.howToStart?.url)}
                     >
                       {data?.howToStart?.text}
                     </a>

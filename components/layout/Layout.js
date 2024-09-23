@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import { useTina } from "tinacms/dist/react";
+import { Provider } from "react-redux";
+import { store } from "../../redux/store";
 
 const Layout = (props) => {
   const { children } = props;
@@ -15,12 +17,6 @@ const Layout = (props) => {
   });
   const { global } = data;
   const { footer, header } = global;
-
-  const [activePage, setActivePage] = useState("");
-
-  useEffect(() => {
-    setActivePage(window.location.pathname);
-  }, []);
 
   const [openClass, setOpenClass] = useState("");
 
@@ -42,31 +38,22 @@ const Layout = (props) => {
   };
 
   return (
-    <>
+    <Provider store={store}>
       <div className={openClass && "body-overlay-1"} onClick={handleRemove} />
 
-      <>
-        <Header
-          handleOpen={handleOpen}
-          headerStyle={props.headerStyle}
-          header={header}
-          activePage={activePage}
-          setActivePage={setActivePage}
-        />
-        <Sidebar
-          openClass={openClass}
-          header={header}
-          activePage={activePage}
-          setActivePage={setActivePage}
-        />
-      </>
+      <Header
+        handleOpen={handleOpen}
+        headerStyle={props.headerStyle}
+        header={header}
+      />
+      <Sidebar openClass={openClass} header={header} />
 
       <main className="main">{children}</main>
 
       <Footer footer={footer} />
 
       {/* <BackToTop /> */}
-    </>
+    </Provider>
   );
 };
 
