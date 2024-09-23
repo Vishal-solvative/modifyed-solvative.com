@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const ServiceHeader2 = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <section className="section-box">
       <div className="banner-hero bg-service-2">
@@ -32,6 +34,7 @@ export const ServiceHeader2 = ({ data }) => {
                   className="btn btn-black icon-arrow-right-white"
                   href={data?.btn1Link || "#"}
                   data-tina-field={tinaField(data, "btn1Link")}
+                  onClick={() => updateActivePage(data?.btn1Link)}
                 >
                   {data?.btn1Title}
                 </Link>
@@ -39,6 +42,7 @@ export const ServiceHeader2 = ({ data }) => {
                   className="btn btn-link icon-triangle color-gray-900 ml-40"
                   href={data?.btn2Link || "#"}
                   data-tina-field={tinaField(data, "btn2Link")}
+                  onClick={() => updateActivePage(data?.btn2Link)}
                 >
                   {data?.btn2Title}
                 </Link>

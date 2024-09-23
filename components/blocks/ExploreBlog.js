@@ -3,8 +3,10 @@
 import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
 import { formatDate } from "../../util/date";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const ExploreBlog = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <div className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="container mt-130">
@@ -26,7 +28,6 @@ export const ExploreBlog = ({ data }) => {
           </div>
           <div className="col-lg-1 col-sm-1 col-12"></div>
           <div>{data?.blog?.name}</div>
-
         </div>
       </div>
       <div className="container mt-90">
@@ -36,7 +37,11 @@ export const ExploreBlog = ({ data }) => {
               <div className="card-grid-style-4">
                 <div className={`grid-4-img mb-20 ${primary?.bgcolor}`}>
                   <Link href={`blogs/${primary?.url || "#"}`} legacyBehavior>
-                    <a>
+                    <a
+                      onClick={() =>
+                        updateActivePage(`blogs/${primary?.url || "#"}`)
+                      }
+                    >
                       <img
                         src={primary?.blogImage_1290x825}
                         alt="Agon"
@@ -52,6 +57,9 @@ export const ExploreBlog = ({ data }) => {
                   <a
                     className="text-heading-4"
                     data-tina-field={tinaField(primary, "blogTitle")}
+                    onClick={() =>
+                      updateActivePage(`blogs/${primary?.url || "#"}`)
+                    }
                   >
                     {primary?.blogTitle}
                   </a>
@@ -95,6 +103,9 @@ export const ExploreBlog = ({ data }) => {
                   <a
                     className="text-heading-6"
                     data-tina-field={tinaField(secondary, "blogTitle")}
+                    onClick={() =>
+                      updateActivePage(`blogs/${secondary?.url || "#"}`)
+                    }
                   >
                     {secondary?.blogTitle}
                   </a>
@@ -123,7 +134,11 @@ export const ExploreBlog = ({ data }) => {
                 </div>
                 <div className={`style-1-img ${secondary?.bgcolor} `}>
                   <Link href={`blog/${secondary?.url || "#"}`} legacyBehavior>
-                    <a>
+                    <a
+                      onClick={() =>
+                        updateActivePage(`blogs/${secondary?.url || "#"}`)
+                      }
+                    >
                       <img
                         src={secondary?.blogImage_360x360}
                         alt="Agon"

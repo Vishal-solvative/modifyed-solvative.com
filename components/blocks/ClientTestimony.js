@@ -1,8 +1,10 @@
 import { tinaField } from "tinacms/dist/react";
 import { LinkTemp } from "../../tina/GlobalTemplates/LinkTemp";
 import Link from "next/link";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const ClientTestimony = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <div className="section-box pt-100 pb-100 mt-100 bg-6 ">
       <div className="container">
@@ -34,6 +36,7 @@ export const ClientTestimony = ({ data }) => {
                       data?.link?.icon && "icon-arrow-right"
                     }`}
                     data-tina-field={tinaField(data?.link, "text")}
+                    onClick={() => updateActivePage(data?.link?.url || "#")}
                   >
                     {data?.link?.text}
                   </a>

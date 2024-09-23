@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const Perks = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <section className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="container">
@@ -53,6 +55,7 @@ export const Perks = ({ data }) => {
                     className="btn btn-default btn-white icon-arrow-right"
                     href={perk?.btnLink || "#"}
                     data-tina-field={tinaField(perk, "btnLink")}
+                    onClick={() => updateActivePage(perk?.btnLink)}
                   >
                     {perk?.btnText}
                   </Link>

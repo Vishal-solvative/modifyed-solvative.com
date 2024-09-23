@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const OurWork = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <section className="section-box mt-100">
       <div className="container">
@@ -61,6 +63,7 @@ export const OurWork = ({ data }) => {
                     <a
                       className="btn btn-default icon-arrow-right"
                       data-tina-field={tinaField(card, "btnText")}
+                      onClick={() => updateActivePage(data?.btnLink)}
                     >
                       {card?.btnText}
                     </a>

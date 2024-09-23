@@ -11,7 +11,6 @@ const Header = ({ header, headerStyle = false, handleOpen }) => {
 
   useEffect(() => {
     updateActivePage(window.location.pathname);
-    console.log("use effect");
   }, []);
 
   useEffect(() => {

@@ -2,8 +2,10 @@ import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
 import { formatDate } from "../../util/date";
 import { LinkTemp } from "../../tina/GlobalTemplates/LinkTemp";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const Categories = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <div className="section-box mt-140 box-animation fade-up-desktop fade-mobile animation">
       <div className="container text-center">
@@ -30,7 +32,7 @@ export const Categories = ({ data }) => {
               <div className="grid-category-2">
                 <div className="grid-category-image hover-effect">
                   <Link href={categorie?.link || "#"} legacyBehavior>
-                    <a>
+                    <a onClick={() => updateActivePage(categorie?.link)}>
                       <img
                         className="main-img"
                         src={categorie?.categoryImage}
@@ -43,6 +45,7 @@ export const Categories = ({ data }) => {
                   <a
                     className="text-heading-5 color-gray-900"
                     data-tina-field={tinaField(categorie, "title")}
+                    onClick={() => updateActivePage(categorie?.link)}
                   >
                     {categorie?.title}
                   </a>
@@ -54,6 +57,7 @@ export const Categories = ({ data }) => {
                       <a
                         className="mr-20"
                         data-tina-field={tinaField(categorie, "text")}
+                        onClick={() => updateActivePage(categorie?.link)}
                       >
                         {categorie?.text}
                       </a>
@@ -67,7 +71,10 @@ export const Categories = ({ data }) => {
                   </div>
                   <div className="link-readmore">
                     <Link href={categorie?.readmore || "#"} legacyBehavior>
-                      <a data-tina-field={tinaField(categorie, "readmore")}>
+                      <a
+                        data-tina-field={tinaField(categorie, "readmore")}
+                        onClick={() => updateActivePage(categorie?.readmore)}
+                      >
                         READ MORE
                       </a>
                     </Link>
@@ -84,6 +91,7 @@ export const Categories = ({ data }) => {
                 data?.link?.icon && "icon-arrow-right-white"
               }`}
               data-tina-field={tinaField(data?.link, "text")}
+              onClick={() => updateActivePage(data?.link?.url || "#")}
             >
               {data?.link?.text}
             </a>

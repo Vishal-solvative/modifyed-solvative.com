@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const PartnerList = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <div className="section-box overflow-visible mt-70">
       <div className="container">
@@ -12,7 +14,10 @@ export const PartnerList = ({ data }) => {
               key={i}
             >
               <Link href={company?.url || "#"}>
-                <a className="item-logo box-hover-shadow hover-up">
+                <a
+                  className="item-logo box-hover-shadow hover-up"
+                  onClick={() => updateActivePage(company?.url)}
+                >
                   <img
                     alt="Agon"
                     src={company?.logo}

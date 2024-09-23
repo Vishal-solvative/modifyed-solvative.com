@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { useState } from "react";
+import { useActivePage } from "../../hooks/useActivePage";
 
 const PlanListComponent = ({ data }) => {
   const [isChecked, setIsChecked] = useState(false);
+  const { activePage, updateActivePage } = useActivePage();
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -94,6 +96,7 @@ const PlanListComponent = ({ data }) => {
                           className="btn btn-black text-body-lead icon-arrow-right-white"
                           href={plan?.btnLink || "#"}
                           data-tina-field={tinaField(plan, "btnLink")}
+                          onClick={() => updateActivePage(plan?.btnLink)}
                         >
                           {plan?.btnText}
                         </Link>

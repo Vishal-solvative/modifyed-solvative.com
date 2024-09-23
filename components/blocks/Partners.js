@@ -1,7 +1,9 @@
 import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const Partners = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <section className="section-box overflow-visible mt-70 box-animation fade-up-desktop fade-mobile animation">
       <div className="container">
@@ -17,7 +19,10 @@ export const Partners = ({ data }) => {
               {data?.companys?.map((company, index) => (
                 <li key={index}>
                   <Link href={company?.url || "#"} legacyBehavior>
-                    <a className="item-logo box-hover-shadow">
+                    <a
+                      className="item-logo box-hover-shadow"
+                      onClick={() => updateActivePage(company?.url)}
+                    >
                       <img
                         alt="Agon"
                         src={company?.logo}

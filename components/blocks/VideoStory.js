@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
+import { useActivePage } from "../../hooks/useActivePage";
 
 const VideoStoryComponent = ({ data }) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const { activePage, updateActivePage } = useActivePage();
 
   const openModal = () => {
     setModalOpen(true);
@@ -52,6 +54,7 @@ const VideoStoryComponent = ({ data }) => {
                         className="btn btn-black icon-arrow-right-white mb-15 mr-20"
                         href={data?.btn1Link}
                         data-tina-field={tinaField(data, "btn1Link")}
+                        onClick={() => updateActivePage(data?.btn1Link)}
                       >
                         {data?.btn1Title}
                       </Link>
@@ -61,6 +64,7 @@ const VideoStoryComponent = ({ data }) => {
                         className="btn btn-default icon-arrow-right color-gray-900 btn-mb mb-15"
                         href={data?.btn2Link}
                         data-tina-field={tinaField(data, "btn2Link")}
+                        onClick={() => updateActivePage(data?.btn2Link)}
                       >
                         {data?.btn2Title}
                       </Link>

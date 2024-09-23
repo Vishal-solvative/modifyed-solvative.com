@@ -4,9 +4,11 @@ import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { formatDate } from "../../util/date";
+import { useActivePage } from "../../hooks/useActivePage";
 
 SwiperCore.use([Autoplay, Navigation]);
 export const BlogCarousel = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <section className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="container mt-70">
@@ -59,7 +61,7 @@ export const BlogCarousel = ({ data }) => {
                                 legacyBehavior
                                 data-tina-field={tinaField(card, "url")}
                               >
-                                <a>
+                                <a onClick={() => updateActivePage(`blogs`)}>
                                   <img
                                     data-tina-field={tinaField(
                                       card,
@@ -88,6 +90,7 @@ export const BlogCarousel = ({ data }) => {
                                 <a
                                   className="text-heading-4"
                                   data-tina-field={tinaField(card, "blogTitle")}
+                                  onClick={() => updateActivePage(`blogs`)}
                                 >
                                   {card?.blogTitle}
                                 </a>

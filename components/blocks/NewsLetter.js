@@ -1,8 +1,10 @@
 import { LinkTemp } from "../../tina/GlobalTemplates/LinkTemp";
 import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const NewsLetter = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <div className="section-box overflow-visible mb-50 box-animation fade-up-desktop fade-mobile animation">
       <div className="container mt-100">
@@ -33,7 +35,10 @@ export const NewsLetter = ({ data }) => {
                   {data?.link && (
                     <div>
                       <Link href={data?.link?.url} legacyBehavior>
-                        <a data-tina-field={tinaField(data?.link, "text")}>
+                        <a
+                          data-tina-field={tinaField(data?.link, "text")}
+                          onClick={() => updateActivePage(data?.link?.url)}
+                        >
                           {data?.link?.text}
                         </a>
                       </Link>

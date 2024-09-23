@@ -2,9 +2,11 @@ import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useActivePage } from "../../hooks/useActivePage";
 
 SwiperCore.use([Autoplay, Navigation]);
 export const Hero6 = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <div>
       <div className="section-box">
@@ -35,6 +37,7 @@ export const Hero6 = ({ data }) => {
                     <a
                       className="btn btn-black shape-square icon-arrow-right-white"
                       data-tina-field={tinaField(data, "btn1Text")}
+                      onClick={() => updateActivePage(data?.btn1Link || "#")}
                     >
                       {data?.btn1Text}
                     </a>
@@ -43,6 +46,7 @@ export const Hero6 = ({ data }) => {
                     <a
                       className="btn btn-link icon-triangle color-gray-900 ml-40"
                       data-tina-field={tinaField(data, "btn2Text")}
+                      onClick={() => updateActivePage(data?.btn2Link || "#")}
                     >
                       {data?.btn2Text}
                     </a>
@@ -110,7 +114,11 @@ export const Hero6 = ({ data }) => {
                           <div className="grid-category grid-category-style-2">
                             <div className="grid-image-left-category">
                               <Link href={card?.url || "#"} legacyBehavior>
-                                <a>
+                                <a
+                                  onClick={() =>
+                                    updateActivePage(card?.url || "#")
+                                  }
+                                >
                                   <div className="category-image">
                                     <span
                                       className={card?.logosvg}
@@ -147,7 +155,11 @@ export const Hero6 = ({ data }) => {
                             </div>
                             <div className="grid-image-bottom">
                               <Link href={card?.url || "#"} legacyBehavior>
-                                <a>
+                                <a
+                                  onClick={() =>
+                                    updateActivePage(card?.url || "#")
+                                  }
+                                >
                                   <img
                                     src={card?.mainImage}
                                     alt="solvative"

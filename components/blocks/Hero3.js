@@ -1,7 +1,9 @@
 import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const Hero3 = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <section className="section-box">
       <div className="banner-hero bg-about-2">
@@ -31,6 +33,7 @@ export const Hero3 = ({ data }) => {
                   <a
                     className="btn btn-black shape-square icon-arrow-right-white"
                     data-tina-field={tinaField(data, "btn1Text")}
+                    onClick={() => updateActivePage(data?.btn1Link || "#")}
                   >
                     {data?.btn1Text}
                   </a>
@@ -39,6 +42,7 @@ export const Hero3 = ({ data }) => {
                   <a
                     className="btn btn-link color-gray-900 icon-arrow-right text-heading-6"
                     data-tina-field={tinaField(data, "btn2Text")}
+                    onClick={() => updateActivePage(data?.btn2Link || "#")}
                   >
                     {data?.btn2Text}
                   </a>

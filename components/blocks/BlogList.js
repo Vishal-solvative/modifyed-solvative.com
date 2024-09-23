@@ -1,8 +1,10 @@
 import { tinaField } from "tinacms/dist/react";
 import Link from "next/link";
 import { LinkTemp } from "../../tina/GlobalTemplates/LinkTemp";
+import { useActivePage } from "../../hooks/useActivePage";
 
 export const BlogList = ({ data }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <section className="section-box box-animation fade-up-desktop fade-mobile animation">
       <div className="container mt-30">
@@ -27,6 +29,7 @@ export const BlogList = ({ data }) => {
                 <a
                   className="btn btn-black icon-arrow-right-white"
                   data-tina-field={tinaField(data?.viewMore, "text")}
+                  onClick={() => updateActivePage(data?.viewMore?.url)}
                 >
                   {data?.viewMore?.text}
                 </a>
@@ -51,6 +54,9 @@ export const BlogList = ({ data }) => {
                     className="text-heading-4"
                     href="#"
                     data-tina-field={tinaField(blog, "blogTitle")}
+                    onClick={() =>
+                      updateActivePage(`blogs/${blog?.url || "#"}`)
+                    }
                   >
                     {blog?.blogTitle}
                   </a>
@@ -58,7 +64,11 @@ export const BlogList = ({ data }) => {
 
                 <div className={`grid-4-img ${blog?.bgcolor}`}>
                   <Link href={`blog/${blog?.url || "#"}`} legacyBehavior>
-                    <a>
+                    <a
+                      onClick={() =>
+                        updateActivePage(`blogs/${blog?.url || "#"}`)
+                      }
+                    >
                       <img
                         src={blog?.blogImage_1290x1506}
                         alt="Agon"

@@ -3,8 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTina } from "tinacms/dist/react";
 import { tinaField } from "tinacms/dist/react";
+import { useActivePage } from "../../hooks/useActivePage";
 
 const Footer = ({ footer }) => {
+  const { activePage, updateActivePage } = useActivePage();
   return (
     <>
       <footer className="footer mt-50">
@@ -13,7 +15,10 @@ const Footer = ({ footer }) => {
             <div className="row">
               <div className="col-md-4 col-sm-6 text-center text-md-start">
                 <Link href="/" legacyBehavior>
-                  <a data-tina-field={tinaField(footer, "logo")}>
+                  <a
+                    data-tina-field={tinaField(footer, "logo")}
+                    onClick={() => updateActivePage("/")}
+                  >
                     {/* <img alt="Agon" src="/assets/imgs/template/logo.svg" /> */}
                     <Image
                       src={footer?.logo}
@@ -39,6 +44,7 @@ const Footer = ({ footer }) => {
                   <a
                     className="btn btn-square"
                     data-tina-field={tinaField(footer?.createAccount, "text")}
+                    onClick={() => updateActivePage(footer?.createAccount?.url)}
                   >
                     {footer?.createAccount?.text}
                   </a>
@@ -85,7 +91,10 @@ const Footer = ({ footer }) => {
                   {data?.link?.map((link, inx) => (
                     <li key={inx}>
                       <Link href={link?.url || "#"} legacyBehavior>
-                        <a data-tina-field={tinaField(link, "text")}>
+                        <a
+                          data-tina-field={tinaField(link, "text")}
+                          onClick={() => updateActivePage(link?.url)}
+                        >
                           {link?.text}
                         </a>
                       </Link>
