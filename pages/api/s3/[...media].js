@@ -2,7 +2,7 @@ import {
   mediaHandlerConfig,
   createMediaHandler,
 } from "next-tinacms-s3/dist/handlers";
-
+export const runtime = "edge";
 export const config = mediaHandlerConfig;
 
 export default createMediaHandler({

@@ -143,7 +143,6 @@ export const ContactUsForm = ({ data }) => {
                   <button
                     className="btn btn-black icon-arrow-right-white mr-40 mb-20"
                     type="submit"
-                    onClick={handleSubmit}
                   >
                     Send Message
                   </button>
