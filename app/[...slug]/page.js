@@ -4,6 +4,7 @@ import ClientPage from "./client-page";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
+  
   const pages = await client.queries.pageConnection();
   const paths = pages.data?.pageConnection.edges.map((edge) => ({
     slug: edge.node._sys.breadcrumbs,
