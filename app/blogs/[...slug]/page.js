@@ -1,6 +1,7 @@
 import React from "react";
 import client from "../../../tina/__generated__/client";
 import BlogClientPage from "./client-page";
+export const runtime = "edge";
 
 export default async function BlogPage({ params }) {
   const data = await client.queries.blogs({

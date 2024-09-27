@@ -2,6 +2,7 @@ import TinaComp from "../../components/TinaComp";
 import { client } from "../../tina/__generated__/client";
 import ClientPage from "./client-page";
 import { notFound } from "next/navigation";
+export const runtime = "edge";
 
 export async function generateStaticParams() {
   const pages = await client.queries.pageConnection();
