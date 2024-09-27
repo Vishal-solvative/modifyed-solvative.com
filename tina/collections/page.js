@@ -22,7 +22,7 @@ import { ServiceHeader1BlockSchema } from "../../components/blocks/ServiceHeader
 import { ServiceHeader2BlockSchema } from "../../components/blocks/ServiceHeader2";
 import { VideoStoryBlockSchema } from "../../components/blocks/VideoStory";
 import { WelcomeHeroBlockSchema } from "../../components/blocks/WelcomeHero";
-import { WhatWeOfferBlockSchema } from "../../components/blocks/whatWeOffer";
+// import { WhatWeOfferBlockSchema } from "../../components/blocks/whatWeOffer";
 import { HappyCustomersBlockSchema } from "../../components/blocks/HappyCustomers";
 import { OurJourneyBlockSchema } from "../../components/blocks/OurJourney";
 import { HowItWorksBlockSchema } from "../../components/blocks/HowItWorks";
@@ -116,7 +116,7 @@ const Page = {
         ServiceHeader2BlockSchema,
         PlanListBlockSchema,
         CareerDetailsBlockSchema,
-        WhatWeOfferBlockSchema,
+        // WhatWeOfferBlockSchema,
         HappyCustomersBlockSchema,
         OurJourneyBlockSchema,
         HowItWorksBlockSchema,

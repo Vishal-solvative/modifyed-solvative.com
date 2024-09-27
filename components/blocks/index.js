@@ -24,7 +24,7 @@ import { ServiceHeader1 } from "./ServiceHeader1";
 import { ServiceHeader2 } from "./ServiceHeader2";
 import { PlanList } from "./PlanList";
 import { CareerDetails } from "./CareerDetails";
-import { WhatWeOffer } from "./whatWeOffer";
+// import { WhatWeOffer } from "./whatWeOffer";
 import { HappyCustomers } from "./HappyCustomers";
 import { OurJourney } from "./OurJourney";
 import { HowItWorks } from "./HowItWorks";
@@ -118,8 +118,8 @@ const Block = (section) => {
       return <PlanList data={section} />;
     case "PageSectionCareerDetails":
       return <CareerDetails data={section} />;
-    case "PageSectionWhatWeOffer":
-      return <WhatWeOffer data={section} />;
+    // case "PageSectionWhatWeOffer":
+    //   return <WhatWeOffer data={section} />;
     case "PageSectionHappyCustomers":
       return <HappyCustomers data={section} />;
     case "PageSectionOurJourney":
