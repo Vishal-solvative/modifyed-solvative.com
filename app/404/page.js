@@ -1,6 +1,5 @@
 import TinaComp from "../../components/TinaComp";
 import { client } from "../../tina/__generated__/client";
-export const runtime = "edge";
 
 const NotFound = async () => {
   const res = await client.queries.page({
