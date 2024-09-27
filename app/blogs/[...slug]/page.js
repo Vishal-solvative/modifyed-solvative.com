@@ -1,5 +1,5 @@
 import React from "react";
-import client from "../../../tina/__generated__/databaseClient";
+import client from "../../../tina/__generated__/client";
 import BlogClientPage from "./client-page";
 
 export default async function BlogPage({ params }) {

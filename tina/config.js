@@ -16,10 +16,13 @@ const branch =
   process.env.HEAD ||
   "main";
 const config = defineConfig({
-  contentApiUrlOverride: "/api/tina/gql",
-  authProvider: isLocal
-    ? new LocalAuthProvider()
-    : new UsernamePasswordAuthJSProvider(),
+  token: process.env.TINA_TOKEN,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+
+  // contentApiUrlOverride: "/api/tina/gql",
+  // authProvider: isLocal
+  //   ? new LocalAuthProvider()
+  //   : new UsernamePasswordAuthJSProvider(),
   client: {
     referenceDepth: 1,
   },
@@ -33,9 +36,15 @@ const config = defineConfig({
     publicFolder: "public",
   },
   media: {
-    loadCustomStore: async () => {
-      const pack = await import("next-tinacms-s3");
-      return pack.TinaCloudS3MediaStore;
+    // If you wanted AWS S3 Bucket do this
+    // loadCustomStore: async () => {
+    //   const pack = await import("next-tinacms-s3");
+    //   return pack.TinaCloudS3MediaStore;
+    // },
+    // this is the config for the tina cloud media store
+    tina: {
+      publicFolder: "public",
+      mediaRoot: "uploads",
     },
   },
 

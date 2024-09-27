@@ -1,4 +1,4 @@
-import { client } from "../tina/__generated__/databaseClient";
+import { client } from "../tina/__generated__/client";
 import Layout from "../components/layout/Layout";
 import "../public/assets/css/style.css";
 import "../public/assets/css/scroll-up-animation.css";
